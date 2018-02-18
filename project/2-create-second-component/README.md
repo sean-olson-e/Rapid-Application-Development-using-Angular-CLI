@@ -1,2 +1,0 @@
-# Rapid-Application-Development-using-Angular-CLI
-This repository provides code samples that will walk you through Angular CLI basics to quickly standup an Angular app that uses the ArcGIS API for JavaScript. Working through these app in sequence you’ll create an app, generate components and services, implement the ArcGIS API for JavaScript, leverage two-way data binding, handle form inputs, connect to APIs through http, set up routing and more.
