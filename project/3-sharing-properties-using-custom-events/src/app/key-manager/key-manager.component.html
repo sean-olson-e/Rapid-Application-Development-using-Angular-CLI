@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <form class="col-6">
+      <div class="form-group">
+        <label for="api-key">{{label}}</label>
+        <input class="form-control col-12" type="text" name="api-key" id="api-key" [(ngModel)]="apiKey" />
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary" (click)='setApiKey($event)'>Save Key</button>
+      </div>
+    </form>
+  </div>
+</div>
