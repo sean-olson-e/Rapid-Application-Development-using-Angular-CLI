@@ -1,0 +1,44 @@
+/****** app.module.ts *****/
+
+import { FormsModule } from '@angular/forms';
+
+  imports: [
+    BrowserModule,
+    FormsModule
+  ],
+
+
+/****** key-mananager.component.ts *****/
+
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-key-manager',
+  templateUrl: './key-manager.component.html',
+  styleUrls: ['./key-manager.component.css']
+})
+export class KeyManagerComponent implements OnInit {
+
+  label = 'Yelp! Api Key';
+  apiKey;
+
+  setApiKey = (ev) => {
+    window.localStorage.setItem('apiKey', this.apiKey);
+  }
+
+  constructor() { }
+
+  ngOnInit() {
+    this.apiKey = window.localStorage.getItem('apiKey');
+  }
+
+}
+
+/****** key-mananager.component.html *****/
+
+<div>
+  <!-- using double-braces to bind properties using string interpolation -->
+  <label for="api-key">{{label}}: </label>
+  <input type="text" name="api-key" id="api-key" [(ngModel)]="apiKey">
+  <button (click)='setApiKey($event)'>Save Key</button>
+</div>
