@@ -1,0 +1,4 @@
+<app-header></app-header>
+<app-key-manager [apiKey]="apiKey" (updatedKey)="getKey()"></app-key-manager>
+
+<app-console *ngIf="apiKey"></app-console>

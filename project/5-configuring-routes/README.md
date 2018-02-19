@@ -1,17 +1,67 @@
-# Using Angular Built-In Directives
-There are many built-in directives in Angular, designed to assist with common tasks.  You can browse the. in (The Angular API)[https://angular.io/api]
+# Configuring Routes
+The Angular Router enables navigation from one view to the next as users perform application tasks. You can read more about Routing and Navigation [here](https://angular.io/guide/router). Routing is often requied as simple app grow into more complex apps, often requiring refactoring of your app. 
 
-## Commonly Used Diretives
-* [ngIf](https://angular.io/api/common/NgIf) -- Conditionally includes a template based on the value of an expression.
-* [ngFor / NgForOf](https://angular.io/api/common/NgForOf) -- The NgForOf directive instantiates a template once per item from an iterable. The context for each instantiated template inherits from the outer context with the given loop variable set to the current item from the iterable.
-* [ngStyle](https://angular.io/api/common/NgStyle) --The styles are updated according to the value of the expression evaluation.
-* [ngClass](https://angular.io/api/common/NgClass) -- The CSS classes are updated as follows, depending on the type of the expression evaluation.
+## Project Step #5: Add Routing to support a more-developed UI
 
-## Project Step #3: Using Directives to Conditionally Render UI Elements
+### a: Create a service to manage the yelp key and api calls
+* Run ng g s yelp --flat true --spec false from the Angular CLI to generate the service class.
+* Add the new yelp.service.ts file to the services directory
+* In the app module component file (app.module.ts), import the new Yelp Service and add it to the list of providers
 
-### a: Create a dashboard component and refactor the app component template (app.component.html)
-* using the short hand options, generate the compoment using the CLI (ng g c dashboard --spec false)
-* see snippet files for further direction
+  import { YelpService } from './services/yelp.service';
+
+  providers: [
+    CuisineTypeService,
+    YelpService
+  ],
+
+### b: Build three new components to support routing and navigation
+* ng g c console --spec false  
+* ng g c search-panel --spec false  
+* ng g c map-panel --spec false  
+
+### c: Reorganize the component structure
+* Remove the key-manager component from the dashboard component template.
+* Remove the dashboard component from the app component template.
+* Add the console and key-manager components to the app component template.
+
+### d: Refactor the key-manager logic to use the YelpService 
+* Inject Yelp Service into the app and key manager component modules.
+* Refactor the save/reset methods in the key-manager component module to use YelpService module
+* Refactor the key managers event emitter to raise the event to the app module
+* Refactor the app module to bind the api-key to the property to the key-manger
+* Use the ng-If directive to show/hide the console module, dependant if the user has an API key.
+
+### e: Add routing to your application
+* Import the Router Module into the app module (app.module.ts), add an array to define the routes, and add routes to imports list
+
+  import { RouterModule } from '@angular/router';
+
+  ...
+
+ const routes = [
+  { path: 'restaurants', component: DashboardComponent },
+  { path: 'foods', component: CuisineTypeListComponent },
+  { path: '**', redirectTo: '/restaurants' }
+  ];
+
+  ...
+
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(routes)
+  ],
+
+### f: Add Navigation Elements
+
+* Add buttons to the key-manager template to function as navaigation contols
+* Configure the routerLink and activeRouterLink attributes on the buttons
+
+### g: Rework the dashboard template
+* Add the serach-panel and map-panel directives to the dashboard template
+
+
+ 
 
 ### Licensing
 

@@ -1,0 +1,16 @@
+.type-cell{
+  width: 75%;
+}
+.control-cell{
+  width: 25%;
+}
+.type-form{
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-top: 20px;
+}
+label{
+  font-size: 1.4em;
+  font-weight: 600;
+}
+
