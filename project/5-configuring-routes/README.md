@@ -8,12 +8,14 @@ The Angular Router enables navigation from one view to the next as users perform
 * Add the new yelp.service.ts file to the services directory
 * In the app module component file (app.module.ts), import the new Yelp Service and add it to the list of providers
 
+```
   import { YelpService } from './services/yelp.service';
 
   providers: [
     CuisineTypeService,
     YelpService
   ],
+```
 
 ### b: Build three new components to support routing and navigation
 * ng g c console --spec false  
@@ -34,7 +36,7 @@ The Angular Router enables navigation from one view to the next as users perform
 
 ### e: Add routing to your application
 * Import the Router Module into the app module (app.module.ts), add an array to define the routes, and add routes to imports list
-
+```
   import { RouterModule } from '@angular/router';
 
   ...
@@ -51,6 +53,7 @@ The Angular Router enables navigation from one view to the next as users perform
     BrowserModule,
     RouterModule.forRoot(routes)
   ],
+```
 
 ### f: Add Navigation Elements
 
@@ -59,9 +62,6 @@ The Angular Router enables navigation from one view to the next as users perform
 
 ### g: Rework the dashboard template
 * Add the serach-panel and map-panel directives to the dashboard template
-
-
- 
 
 ### Licensing
 
