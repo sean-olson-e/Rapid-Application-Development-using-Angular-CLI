@@ -1,21 +1,18 @@
-# Using Angular Built-In Directives
-There are many built-in directives in Angular, designed to assist with common tasks.  You can browse the. in (The Angular API)[https://angular.io/api]
+# Creating & Using Services
 
-## Commonly Used Diretives
-* [ngIf](https://angular.io/api/common/NgIf) -- Conditionally includes a template based on the value of an expression.
-* [ngFor / NgForOf](https://angular.io/api/common/NgForOf) -- The NgForOf directive instantiates a template once per item from an iterable. The context for each instantiated template inherits from the outer context with the given loop variable set to the current item from the iterable.
-* [ngStyle](https://angular.io/api/common/NgStyle) --The styles are updated according to the value of the expression evaluation.
-* [ngClass](https://angular.io/api/common/NgClass) -- The CSS classes are updated as follows, depending on the type of the expression evaluation.
+## Project Step #4: Create a service to manage the cuisine-type options
 
-## Project Step #3: Using Directives to Conditionally Render UI Elements
+* From the Angular CLI generate the new service class (ng generate service cuisine-type --spec false --flat true).
+* Create a services directory under the app directory and drag your newly create cuisine-type service into that directory.
+* Because the same instance of the service has to be shared among two components, there has to be a common instance.
+* The child components get a reference to the common component instance through dependency injection, and Angular will manage the instantiation.
+* Add the service to the providers list in the app module (app.module.ts)
+* Import the service into the component module
+* Create a property in the component for the service type
+* Add a typed augument for the service to the component module constructor and assign that parameter to the component property
 
-### a: Create a dashboard component and refactor the app component template (app.component.html)
-* using the short hand options, generate the compoment using the CLI (ng g c dashboard --spec false)
-* see snippet files for further direction
 
 ### Licensing
-
-Copyright 2018 Esri
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
