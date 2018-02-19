@@ -4,9 +4,9 @@ The Angular Router enables navigation from one view to the next as users perform
 ## Project Step #5: Add Routing to support a more-developed UI
 
 ### a: Create a service to manage the yelp key and api calls
-* Run ``` ng g s yelp --flat true --spec false ``` from the Angular CLI to generate the service class.
-* Add the new yelp.service.ts file to the services directory
-* In the app module component file (app.module.ts), import the new Yelp Service and add it to the list of providers
+1. Run **``` ng g s yelp --flat true --spec false ```** from the Angular CLI to generate the service class.
+2. Add the new yelp.service.ts file to the services directory
+3. In the app module component file (app.module.ts), import the new Yelp Service and add it to the list of providers
 
 ```
   import { YelpService } from './services/yelp.service';
@@ -23,16 +23,16 @@ The Angular Router enables navigation from one view to the next as users perform
 * ``` ng g c map-panel --spec false ```  
 
 ### c: Reorganize the component structure
-* Remove the key-manager component from the dashboard component template.
-* Remove the dashboard component from the app component template.
-* Add the console and key-manager components to the app component template.
+1. Remove the key-manager component from the dashboard component template.
+2. Remove the dashboard component from the app component template.
+3. Add the console and key-manager components to the app component template.
 
 ### d: Refactor the key-manager logic to use the YelpService 
-* Inject Yelp Service into the app and key manager component modules.
-* Refactor the save/reset methods in the key-manager component module to use YelpService module
-* Refactor the key managers event emitter to raise the event to the app module
-* Refactor the app module to bind the api-key to the property to the key-manger
-* Use the ng-If directive to show/hide the console module, dependant if the user has an API key.
+1. Inject Yelp Service into the app and key manager component modules.
+2. Refactor the save/reset methods in the key-manager component module to use YelpService module
+3. Refactor the key managers event emitter to raise the event to the app module
+4. Refactor the app module to bind the api-key to the property to the key-manger
+5. Use the ng-If directive to show/hide the console module, dependant if the user has an API key.
 
 ### e: Add routing to your application
 * Import the Router Module into the app module (app.module.ts), add an array to define the routes, and add routes to imports list
@@ -57,8 +57,16 @@ The Angular Router enables navigation from one view to the next as users perform
 
 ### f: Add Navigation Elements
 
-* Add buttons to the key-manager template to function as navaigation contols
-* Configure the routerLink and activeRouterLink attributes on the buttons
+1. Add buttons to the key-manager template to function as navaigation contols
+2. Configure the routerLink and activeRouterLink attributes on the buttons
+
+```
+    <div class="col-12 nav-panel">
+        <button  class="btn nav-button" routerLink="/dashboard"  routerLinkActive="btn-primary">Find Retaurants</button>
+        <button class="btn nav-button" routerLink="/list"  routerLinkActive="btn-primary">Favorite Foods</button>
+        <button type="submit" class="btn btn-reset float-right" (click)='resetKey()'>Reset your Yelp API Key</button>
+    </div>
+```    
 
 ### g: Rework the dashboard template
 * Add the serach-panel and map-panel directives to the dashboard template
