@@ -4,7 +4,7 @@ The Angular Router enables navigation from one view to the next as users perform
 ## Project Step #5: Add Routing to support a more-developed UI
 
 ### a: Create a service to manage the yelp key and api calls
-* Run ng g s yelp --flat true --spec false from the Angular CLI to generate the service class.
+* Run ``` ng g s yelp --flat true --spec false ``` from the Angular CLI to generate the service class.
 * Add the new yelp.service.ts file to the services directory
 * In the app module component file (app.module.ts), import the new Yelp Service and add it to the list of providers
 
@@ -18,9 +18,9 @@ The Angular Router enables navigation from one view to the next as users perform
 ```
 
 ### b: Build three new components to support routing and navigation
-* ng g c console --spec false  
-* ng g c search-panel --spec false  
-* ng g c map-panel --spec false  
+* ``` ng g c console --spec false```  
+* ``` ng g c search-panel --spec false ```  
+* ``` ng g c map-panel --spec false ```  
 
 ### c: Reorganize the component structure
 * Remove the key-manager component from the dashboard component template.
