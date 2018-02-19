@@ -1,12 +1,12 @@
 # Configuring Routes
-The Angular Router enables navigation from one view to the next as users perform application tasks. You can read more about Routing and Navigation [here](https://angular.io/guide/router). Routing is often requied as simple app grow into more complex apps, often requiring refactoring of your app. 
+The Angular Router enables navigation from one view to the next as users perform application tasks. You can read more about Routing and Navigation [here](https://angular.io/guide/router). Routing is often requied as simple apps grow into more complex apps. 
 
-## Project Step #5: Add Routing to support a more-developed UI
+## Project Step #5: Add routing to support a more-developed UI
 
 ### a: Create a service to manage the yelp key and api calls
-1. Run **``` ng g s yelp --flat true --spec false ```** from the Angular CLI to generate the service class.
-2. Add the new yelp.service.ts file to the services directory
-3. In the app module component file (app.module.ts), import the new Yelp Service and add it to the list of providers
+1. Generate a Yelp service -- run **``` ng g s yelp --flat true --spec false ```** from the Angular CLI.
+2. Add the new ```yelp.service.ts``` file to the services directory
+3. In the app module component file (```app.module.ts```), import the new Yelp Service and add it to the list of providers
 
 ```
   import { YelpService } from './services/yelp.service';
@@ -55,7 +55,7 @@ The Angular Router enables navigation from one view to the next as users perform
   ],
 ```
 
-### f: Add Navigation Elements
+### f: Add navigation Elements
 
 1. Add buttons to the key-manager template to function as navaigation contols
 2. Configure the routerLink and activeRouterLink attributes on the buttons
