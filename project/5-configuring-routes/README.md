@@ -11,6 +11,8 @@ The Angular Router enables navigation from one view to the next as users perform
 ```
   import { YelpService } from './services/yelp.service';
 
+  ...
+
   providers: [
     CuisineTypeService,
     YelpService
@@ -55,15 +57,15 @@ The Angular Router enables navigation from one view to the next as users perform
   ],
 ```
 
-### f: Add navigation Elements
+### f: Add navigation elements
 
 1. Add buttons to the key-manager template to function as navaigation contols
 2. Configure the routerLink and activeRouterLink attributes on the buttons
 
 ```
     <div class="col-12 nav-panel">
-        <button  class="btn nav-button" routerLink="/dashboard"  routerLinkActive="btn-primary">Find Retaurants</button>
-        <button class="btn nav-button" routerLink="/list"  routerLinkActive="btn-primary">Favorite Foods</button>
+        <button  class="btn nav-button" routerLink="/restaurants"  routerLinkActive="btn-primary">Find Retaurants</button>
+        <button class="btn nav-button" routerLink="/foods"  routerLinkActive="btn-primary">Favorite Foods</button>
         <button type="submit" class="btn btn-reset float-right" (click)='resetKey()'>Reset your Yelp API Key</button>
     </div>
 ```    

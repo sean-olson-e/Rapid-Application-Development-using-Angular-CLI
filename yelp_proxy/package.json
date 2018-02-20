@@ -1,0 +1,26 @@
+{
+  "name": "yelp_proxy",
+  "version": "1.0.0",
+  "description": "A simple proxy used to connect client apps to the resources where the service does not provide a Access-Control-Allow-Origin header.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI.git"
+  },
+  "keywords": [
+    "proxy"
+  ],
+  "author": "Sean Olson",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/issues"
+  },
+  "homepage": "https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "needle": "^2.1.2"
+  }
+}

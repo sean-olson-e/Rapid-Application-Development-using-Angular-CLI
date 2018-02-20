@@ -1,8 +1,8 @@
 <div class="container">
   <div class="row" *ngIf="apiKey">
     <div class="col-12 nav-panel">
-        <button  class="btn nav-button" routerLink="/dashboard"  routerLinkActive="btn-primary">Find Retaurants</button>
-        <button class="btn nav-button" routerLink="/list"  routerLinkActive="btn-primary">Favorite Foods</button>
+        <button  class="btn nav-button" routerLink="/restaurants"  routerLinkActive="btn-primary">Find Retaurants</button>
+        <button class="btn nav-button" routerLink="/foods"  routerLinkActive="btn-primary">Favorite Foods</button>
         <button type="submit" class="btn btn-reset float-right" (click)='resetKey()'>Reset your Yelp API Key</button>
     </div>
   </div>

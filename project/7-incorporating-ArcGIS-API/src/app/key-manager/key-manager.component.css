@@ -1,0 +1,11 @@
+.nav-button {
+  width: 150px;
+}
+.btn-reset{
+  background-color: rgb(245, 209, 120);
+}
+.nav-panel {
+  margin-bottom: 50px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
