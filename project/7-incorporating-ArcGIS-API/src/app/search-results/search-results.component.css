@@ -16,6 +16,10 @@ ul{
   font-weight: 500;
   font-size: 1.1em;
 }
+.restaurant:hover{
+  background-color: #f2f2f2;
+  outline: 1px solid #ddd;
+}
 .restaurant-address{
   font-size: .9em;
 }
