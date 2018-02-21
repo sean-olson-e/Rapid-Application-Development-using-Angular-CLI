@@ -7,6 +7,7 @@ export class YelpService {
 
   searchResults: any[] = [];
   updateResults = new Subject<void>();
+  selectedRestaurant = new Subject<void>();
 
   getApiKey = () => {
     return window.localStorage.getItem('apiKey') || '';
@@ -41,6 +42,7 @@ export class YelpService {
          }
          this.searchResults = results.data.businesses.map((business) => {
            return {
+             id: business.id,
              name: business.name,
              rating: business.rating,
              address: business.location.display_address,
@@ -54,6 +56,13 @@ export class YelpService {
         this.updateResults.next();
       });
     });
+  }
+
+  loadRestaurant = (id) => {
+    this.selectedRestaurant.next(id);
+  }
+  getRestaurant = (id) => {
+    return(id);
   }
 
   constructor(private http: HttpClient) {

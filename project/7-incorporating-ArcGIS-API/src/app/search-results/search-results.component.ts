@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { YelpService } from '../services/yelp.service';
 
 @Component({
   selector: 'app-search-results',
@@ -9,7 +10,11 @@ export class SearchResultsComponent implements OnInit {
 
   @Input() restaurants;
 
-  constructor() { }
+  selectRestaurant = (id) => {
+    this.yService.loadRestaurant(id);
+  }
+
+  constructor(private yService: YelpService) { }
 
   ngOnInit() {
   }

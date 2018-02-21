@@ -4,7 +4,7 @@
   "description": "A simple proxy used to connect client apps to the resources where the service does not provide a Access-Control-Allow-Origin header.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",

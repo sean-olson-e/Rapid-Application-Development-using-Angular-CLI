@@ -10,13 +10,19 @@ export class MapPanelComponent implements OnInit {
 
   restaurants: any[] = [];
   yelpSubscription;
+  temp;
+
+  zoomToRestaurant = (restaurant) => {
+    this.temp = 'zooming to ' + restaurant;
+  }
 
   constructor(private yService: YelpService) { }
 
   ngOnInit() {
     this.restaurants = this.yService.getSearchResults();
-    this.yelpSubscription = this.yService.updateResults.subscribe(() => {
-      this.restaurants = this.yService.getSearchResults();
+    this.yelpSubscription = this.yService.selectedRestaurant.subscribe((id) => {
+      const restaurant = this.yService.getRestaurant(id);
+      this.zoomToRestaurant(restaurant);
     });
   }
 }

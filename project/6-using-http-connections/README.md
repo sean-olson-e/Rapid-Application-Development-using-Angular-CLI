@@ -10,7 +10,7 @@ Citing from the [Angular documentation](https://angular.io/guide/http), 2/19/201
 ### **NOTE:** Because Yelp does not allow access for cross-origin resource sharing (CORS), we are unable to query the api directly from the browser.  To provide support for this demonstration app, a yelp-proxy service is provided.  You will find it in the root of this repository.  Lauching the service is easy:
 1. Open a console inside the yelp-proxy folder
 2. Install the node modules: ```**npm install**```
-3. Launch the server: ```**node index**```
+3. Launch the server: ```**npm start**```
 
 
 ### a: Create new components for the search panel
