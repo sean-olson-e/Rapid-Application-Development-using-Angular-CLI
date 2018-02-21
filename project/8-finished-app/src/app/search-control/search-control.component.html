@@ -1,0 +1,18 @@
+<div class="search-control-item">
+  <form>
+    <div class="form-group">
+      <label for="type">What are you hungry for?</label>
+      <select class="form-control" (input)="setSelectedType($event)">
+          <option selected value=''>Pick something</option>
+          <option *ngFor="let type of cuisineTypes" [ngValue]="type">{{type}}</option>
+        </select>
+    </div>
+    <div class="form-group">
+      <label for="zip">Enter a Zip Code</label>
+      <input type="text" name="zip" id="zip" class="form-control" [(ngModel)]="zip">
+    </div>
+    <div class="form-group search-group">
+      <button class="btn btn-success" (click)="search()">Search</button>
+    </div>
+  </form>
+</div>
