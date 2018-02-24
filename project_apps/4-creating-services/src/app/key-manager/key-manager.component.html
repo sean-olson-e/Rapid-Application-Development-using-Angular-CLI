@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row" *ngIf="apiKey">
+    <div class="col-12">
+        <button type="submit" class="btn btn-warning float-right" (click)='deleteApiKey($event)'>Reset your Yelp API Key</button>
+    </div>
+  </div>
+  <div class="row" *ngIf="!apiKey">
+    <form class="col-12">
+      <div class="form-group">
+        <h5>Please enter your Yelp API Key</h5>
+        <p>Don't have one?  No problem.  Get a free Yelp API key <a href="https://www.yelp.com/developers/v3/manage_app" target="_blank">here.</a></p>
+        <input type="password" class="form-control col-12" name="api-key" id="api-key" [value]="apiKey" (input)="changeKey($event)" />
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary" (click)='setApiKey($event)'>Save Key</button>
+      </div>
+    </form>
+  </div>
+</div>
+
