@@ -1,0 +1,12 @@
+<div class="results-list">
+  <ul>
+    <li *ngFor="let place of restaurants">
+      <div class="restaurant" (click)="selectRestaurant(place.id)">
+        <div class="restaurant-name">{{place.name}}</div>
+        <div class="restaurant-address">{{place.address}}</div>
+        <div class="restaurant-phone">{{place.phone}}</div>
+        <div class="restaurant-rating">Rating: {{place.rating}}</div>
+      </div>
+    </li>
+  </ul>
+</div>
