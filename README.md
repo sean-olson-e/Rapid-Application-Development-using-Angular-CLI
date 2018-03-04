@@ -1,7 +1,38 @@
 # Rapid-Application-Development-using-Angular-CLI
-This repository provides code samples that will walk you through Angular CLI basics to quickly standup an Angular app that uses the ArcGIS API for JavaScript. Working through these app in sequence you’ll create an app, generate components and services, implement the ArcGIS API for JavaScript, leverage two-way data binding, handle form inputs, connect to APIs through http, set up routing and more.
+This repository was developed to support the [*Esri Dev Summit 2018* presentation](http://www.esri.com/events/devsummit/agenda?adumkts=branding&aduc=advertising&adum=ppc&aduSF=google&utm_Source=conference&aduca=m18devsummit&aduco=ppc_brand_sitelink&adut=agenda&aducp=esri_corp_events&adupt=devsummit) of similar name. provides code samples that will walk you through Angular CLI basics to quickly standup an Angular app that uses the ArcGIS API for JavaScript. Working through these app in sequence you’ll create an app, generate components and services, implement the ArcGIS API for JavaScript, leverage two-way data binding, handle form inputs, connect to APIs through http, set up routing and more.
+
+## Repository contents
+* **/docs**: presentation slides
+* **/project_apps**: demonstration app broken down into development steps
+* **/resources**: miscellaneous resource documents
+* **/yelp_proxy**: a simple node proxy used to communicate with the Yelp API
+
+## Getting started
+
+```bash
+# one-time only when cloning this repo,
+# if you don't already have the Angular CLI installed
+npm install -g @angular/cli
+
+# choose your paroject app
+cd ./project_apps/<your-choice>
+
+# STOP CODING AND READ THE SAMPLE'S README
+# THEN YOU MAY CONTINUE
+
+# one-time only
+npm install
+
+# every time you want to begin serving/watching
+ng serve
+
+# every time you want to build
+ng build --base-href ./
+```
 
 ### Licensing
+
+Copyright 2018 Esri
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 

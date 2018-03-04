@@ -3,7 +3,7 @@
     <form class="col-6">
       <div class="form-group">
         <label for="api-key">{{label}}</label>
-        <input class="form-control col-12" type="text" name="api-key" id="api-key" [(ngModel)]="apiKey" />
+        <input class="form-control col-12" type="password" name="api-key" id="api-key" [(ngModel)]="apiKey" />
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary" (click)='setApiKey($event)'>Save Key</button>
