@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-	<title>Angular and the ArcGIS API for JavaScript, DS2018</title>
+	<title>Kick Starter: Rapid Application Development using Angular CLI, DS2018</title>
 
 	<link rel="stylesheet" href="css/reveal.css">
 	<link rel="stylesheet" href="css/theme/esri-dev-summit-2018.css">
@@ -34,6 +34,7 @@
 		}
 
 	</style>
+
 </head>
 
 <body>
@@ -47,253 +48,158 @@
 
 		<div class="slides">
 			<section data-background="img/bg-1.png" data-background-size="cover" style="padding-left: 80px;">
-				<h1 style="text-align: left; font-size: 80px;">
-					Angular and the ArcGIS API for JavaScript
-				</h1>
-				<p style="text-align: left; display: flex; align-items: center">
-					<span style="text-transform: uppercase;">Andy Gup</span>
-					<a href="https://twitter.com/agup" target="_blank" style="font-size: 30px;">
-						<img src="img/Twitter_Logo_WhiteOnImage.png" width="40" style="border: none; vertical-align: middle; margin-left: 50px; margin-right: 10px;">@agup
-					</a>
-				</p>
-				<p style="text-align: left; display: flex; align-items: center">
-					<span style="text-transform: uppercase;">Sean Olson</span>
+				<h3>
+					Kick Starter:
+				</h3>
+				<h3>
+					Rapid Application Development using Angular CLI
+				</h3>
+				<p style="text-align: center; margin-top: 75px;">
+					<span style="text-transform: uppercase; ;">Sean Olson</span>
 					<a href="https://www.linkedin.com/in/seanolson-io/" target="_blank" style="font-size: 30px;">
 						<img src="img/In-White-121px-R.png" width="40" style="border: none; vertical-align: middle; margin-left: 50px; margin-right: 10px;">seanolson-io
 					</a>
 				</p>
-				<p style="text-align: left; display: flex; align-items: center">
-					<span style="text-transform: uppercase;">Jacob Wasilkowski</span>
-					<a href="https://twitter.com/JWasilGeo" target="_blank" style="font-size: 30px;">
-						<img src="img/Twitter_Logo_WhiteOnImage.png" width="40" style="border: none; vertical-align: middle; margin-left: 50px; margin-right: 10px;">@JWasilGeo
-					</a>
-				</p>
-			</section>
-
-			<section data-markdown data-background="img/bg-2.png" data-state="intro-css">
-				<textarea data-template>
-					## [Angular](https://angular.io) + [Esri JSAPI](https://js.arcgis.com)
-
-					 [![angular logo](img/angular.png)](https://angular.io) [![angular logo](img/angular.png)](https://angular.io) [![angular logo](img/angular.png)](https://angular.io)
-
-					 [![angular logo](img/angular.png)](https://angular.io) [![angular logo](img/angular.png)](https://angular.io) [![angular logo](img/angular.png)](https://angular.io)
-				</textarea>
-			</section>
-
-			<section data-markdown data-background="img/bg-2.png" data-state="intro-css">
-				<textarea data-template>
-					## Angular?	Yes. Angular.
-
-					![angular logo](img/angular.png)
-
-					---
-
-					_Not "AngularJS", "Angular v1", "Angular.js", etc._
-
-					https://github.com/Esri/angular-esri-map
-
-					![angularjs logo](img/AngularJS-large.png)
-				</textarea>
-			</section>
-
-			<section data-markdown data-background="img/bg-2.png" id="presentations-this-week">
-				<textarea data-template>
-					## Upcoming, related presentations
-			
-					1. **[Using Frameworks with the ArcGIS API for JavaScript](https://devsummit2018.schedule.esri.com/schedule/1224212752)**
-						
-						- Thursday, March 08 at 2:30pm, Primrose A
-						
-						- Rene Rubalcava and Tom Wayson
-
-					2. **[Kick Starter: Rapid Application Development using Angular CLI](https://devsummit2018.schedule.esri.com/schedule/433914485)**
-						
-						- Friday, March 09 at 8:30am, Pasadena/Sierra/Ventura
-						
-						- Sean Olson
-				</textarea>
+				<p >Get the code samples, slides and resources from this presentation:</p>
+				<p style="text-decoration: underline">github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI</p>
 			</section>
 
 			<section data-markdown data-background="img/bg-2.png">
 				<textarea data-template>
-					## What's the plan today?
+					### Primary audience for this presentation
 			
-					### Assuming some familiarity with Angular 2+:
+					###### You have solid JavaScript development skills, but...
 
-					- Walk through sample Angular apps from http://esriurl.com/13900
+					-	have no JavaScript framework experience.
+					-	have experience with JavaScript frameworks other than Angular.
+					-	work with Angular.js (Angular 1), but have not made the leap to Angular (Angular 2+).
+					- 	are just interested in tech and want to learne more.
 
-					- Learn how to use Esri JSAPI _inside of_ Angular apps
-					
-					- Consume Esri JSAPI from CDN
 				</textarea>
 			</section>
-
-			<section data-markdown data-background="img/bg-2.png" data-state="into-css">
-				<textarea data-template>
-					## Getting started
-
-					1. Download our repo at http://esriurl.com/13900
-
-						- Github "sean-olson-e/Angular-and-the-ArcGIS-API-for-JavaScript"
-
-					2. Follow along as we work with Angular sample apps
-
-						- ./sample_apps/1-app-scaffolding
-						
-						- ./sample_apps/2-more-app-scaffolding
-
-						- ./sample_apps/3-the-esri-loader
-						
-						- ...and more...
-				</textarea>
-			</section>
-
 			<section data-markdown data-background="img/bg-3.png">
 				<textarea data-template>
-					## 1-app-scaffolding
-			
-					- Quick start instructions for this demo
+					## Why use the CLI?
+
+					*  It eliminates the cumbersome task of creating a custom build script.
+					*  It provides a standard application architecture that supports team development.
+					*  It facilitates rapid development with generator commands for components, services, directives and more.
+
+				</textarea>
+			</section>
+			<section data-markdown data-background="img/bg-3.png">
+				<textarea data-template>
+					## Installing the Angular CLI
+
+					- with Node.js already on your computer, install Angular CLI through npm
 
 						```bash
-						# only once on your computer
 						npm install -g @angular/cli
 						```
+				</textarea>
+			</section>
+			<section data-markdown data-background="img/bg-2.png" data-state="into-css">
+				<textarea data-template>
+					### A Few Basic CLI Commands
+					* ```ng new <application-name> [options]```
+					* ```ng generate <type> [options]```
+					* ```ng serve [options]```
+					* ```ng build  [options]```
 
-						```bash
-						# go to the first sample app
-						cd ./sample_apps/1-app-scaffolding
-
-						# install dependencies
-						npm install
-
-						# serve the app for development
-						ng serve
-
-						# or, if you want to build for production
-						ng build --base-href ./
-						```
+					for more complete list of CLI commands checkout the [Angular CLI Wiki](https://github.com/angular/angular-cli/wiki)
+				</textarea>
+			</section>
+			<section data-markdown data-background="img/bg-2.png" data-state="into-css">
+				<textarea data-template>
+					## Let's get started
+					- Create a sample app without installing node modules
+					```
+						ng new my-app --skip-install --directory my-directory
+					```
 				</textarea>
 			</section>
 
 			<section data-markdown data-background="img/bg-3.png">
 				<textarea data-template>
-					## 1-app-scaffolding
-			
-					- Building blocks:
+					## Exploring the Application Structure
 
-						- Angular CLI
+					Too much to show in a slide.
 
-						- "esri-loader"
-
-						- custom demo files:
-						
-							- `esri-map.component.ts`
-
-							- `esri-map.component.html`
-
-							- `esri-map.component.css`
+					Let's checkout the project app [0-app-scaffolding](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/0-app-scaffolding).
 				</textarea>
 			</section>
 
-			<section data-markdown data-background="img/bg-4.png">
+			<section data-markdown data-background="img/bg-3.png">
 				<textarea data-template>
-					## 2-more-app-scaffolding
-			
-					- Extending the map component
-						- Pass data from parent to child map component with input binding
-						- Listen in parent for child map event
+					![asynchronous operations](img/bootstrap_sequence.png)
 				</textarea>
 			</section>
-
-			<section data-markdown data-background="img/bg-5.png" data-state="blockquote-smaller">
+			<section data-markdown data-background="img/bg-3.png">
 				<textarea data-template>
-					## 3-the-esri-loader
-			
-					- The glue that holds everything together is ["Esri/esri-loader"](https://github.com/Esri/esri-loader).
+					## Serving an Angular App
+					- To launch any of the Angular project apps a browser
+					```
+						# navigate the root of any app directory and run
+						npm install
 
-						&gt; "A tiny library to help load ArcGIS API for JavaScript modules in non-Dojo applications"
-
-						```ts
-						/* ANGULAR GALAXY AND COLD VACUUM OF SPACE OUT HERE! */
-
-						import { loadModules } from 'esri-loader';
-
-						loadModules([
-							'esri/Map', 'esri/views/MapView', 'esri/Graphic'
-						]).then(([
-							EsriMap, EsriMapView, Graphic
-						]) =&gt; {
-							/* ESRI PLANET WITH ATMOSPHERE INSIDE HERE! */
-
-							// for example you could recreate any demo from https://js.arcgis.com
-						});
-
-						/* ANGULAR GALAXY AND COLD VACUUM OF SPACE OUT HERE! */
-						```
-				</textarea>
-			</section>
-
-			<section data-markdown data-background="img/bg-5.png">
-				<textarea data-template>
-					## 3-the-esri-loader
-			
-					- This brings Esri **WITHIN** Angular
-
-					- Which ultimately means Dojo **INSIDE OF** Angular
-
-					- How?
-
-						- ES/TS module with `loadModulues` method that you `import` as needed.
-
-						- It dynamically injects an ArcGIS for JavaScript API `&lt;script&gt;` tag onto the page.
-
-						- You tell `loadModules` which Esri modules you want, à la carte.
-				</textarea>
-			</section>
-
-			<section data-markdown data-background="img/bg-5.png" data-state="blockquote-smaller">
-				<textarea data-template>
-					## 3-the-esri-loader
-
-					- Why?
-
-						&gt; "The only reliable way to load ArcGIS API for JavaScript modules is using Dojo's AMD loader."
-
-					- You benefit from getting to:
-
-						- use Angular tooling
-
-						- improve initial app load performance
-
-						- control exactly when to load and use Esri modules
+						#once the node modules have installed, launch the app server
+						ng serve
+					```
+					- Open a browser and navigate to localhost:4200
 				</textarea>
 			</section>
 
 			<section data-markdown data-background="img/bg-6.png">
 				<textarea data-template>
-					## 4-types-for-arcgis-api
-			
-					- [Esri provides type definitions](https://github.com/Esri/jsapi-resources/) for the ArcGIS API for JavaScript
+					![asynchronous operations](img/app_screenshot.png)
+				</textarea>
+			</section>
 
-					- For Esri v4.x, install them with
-					
-						```bash
-						npm install --save @types/arcgis-js-api
-						```
+			<section data-markdown data-background="img/bg-5.png" data-state="blockquote-smaller">
+				<textarea data-template>
+					![step one](img/step_one_component.png)
+				</textarea>
+			</section>
 
-						and also add to `tsconfig.app.json`.
+			<section data-markdown data-background="img/bg-5.png">
+				<textarea data-template>
+					## Components
+					- Let's create an Angular component using the CLI
 
-						```json
-						"types": ["arcgis-js-api"]
-						```
+					```
+						#navigate into the root of project_apps/1-creating-components and run
+						ng generate component key-manager --spec false
 
-					- Types are available through global "`__esri`" namespace for Esri v4.x
+					```
+				</textarea>
+			</section>
+			<section data-markdown data-background="img/bg-5.png">
+				<textarea data-template>
+					## Components
+					- Let's create an Angular component using the CLI
 
-						- We recommend renaming to "`esri`" with
+					```
+						#navigate into the root of project_apps/1-creating-components and run
+						ng generate component key-manager --spec false
 
-						```ts
-						import esri = __esri;
-						```
+					```
+				</textarea>
+			</section>
+			<section data-markdown data-background="img/bg-4.png">
+				<textarea data-template>
+					## TypeScript, Briefly
+				</textarea>
+			</section>
+
+			<section data-markdown data-background="img/bg-5.png" data-state="blockquote-smaller">
+				<textarea data-template>
+
+				</textarea>
+			</section>
+
+			<section data-markdown data-background="img/bg-6.png">
+				<textarea data-template>
+
 				</textarea>
 			</section>
 

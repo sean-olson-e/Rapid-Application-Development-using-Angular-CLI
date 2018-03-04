@@ -1,6 +1,6 @@
 presentation snippets
 
-CONSOLE TRANSITION 1: ng new demo --skip-install --directory 0-app-scaffolding
+CONSOLE TRANSITION 1: ng new my-app --skip-install --directory my-directory
 
 CONSOLE TRANSITION 2: ng serve
 
