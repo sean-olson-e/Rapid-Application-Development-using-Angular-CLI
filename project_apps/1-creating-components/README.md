@@ -1,6 +1,7 @@
 # Create a Component
 
-What is a component (form the [Angular API Documentation](https://angular.io/api/core/Component))
+#### What is a component? 
+(form the [Angular API Documentation](https://angular.io/api/core/Component))
 
 > Components are the most basic building block of an UI in an Angular application. An Angular application is a tree of Angular components. Angular components are a subset of directives. Unlike directives, components always have a template and only one component can be instantiated per an element in a template.
 
@@ -104,7 +105,7 @@ With the FormsModule imported into the app, you can implement two-way binding wi
 </div>
 ```
 
-#### Review [the completed code for this step](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/1-creating-components/src/snippets/key-manager) 
+#### Review [the completed component modules for this step](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/1-creating-components/src/snippets/key-manager) 
 
 
 ### Licensing
