@@ -3,7 +3,7 @@ This repository was developed to support the [*Esri Dev Summit 2018* presentatio
 
 ## Repository contents
 * **/docs**: presentation slides
-* **/project_apps**: demonstration app broken down into development steps
+* **[/project_apps](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps)**: demonstration app broken down into development steps. Each of the project_apps directories is accompanied by a README file that will walk you through the given implementation.
 * **/resources**: miscellaneous resource documents
 * **/yelp_proxy**: a simple node proxy used to communicate with the Yelp API
 
