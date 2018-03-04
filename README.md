@@ -1,11 +1,11 @@
 # Rapid-Application-Development-using-Angular-CLI
-This repository was developed to support the [*Esri Dev Summit 2018* presentation](http://www.esri.com/events/devsummit/agenda?adumkts=branding&aduc=advertising&adum=ppc&aduSF=google&utm_Source=conference&aduca=m18devsummit&aduco=ppc_brand_sitelink&adut=agenda&aducp=esri_corp_events&adupt=devsummit) of similar name. provides code samples that will walk you through Angular CLI basics to quickly standup an Angular app that uses the ArcGIS API for JavaScript. Working through these app in sequence you’ll create an app, generate components and services, implement the ArcGIS API for JavaScript, leverage two-way data binding, handle form inputs, connect to APIs through http, set up routing and more.
+This repository was developed to support the [*Esri Dev Summit 2018* presentation](http://www.esri.com/events/devsummit/agenda?adumkts=branding&aduc=advertising&adum=ppc&aduSF=google&utm_Source=conference&aduca=m18devsummit&aduco=ppc_brand_sitelink&adut=agenda&aducp=esri_corp_events&adupt=devsummit) of similar name. This repository provides code samples that will walk you through Angular CLI basics to quickly standup an Angular app that uses the ArcGIS API for JavaScript. Working through these app in sequence you’ll create an app, generate components and services, implement the ArcGIS API for JavaScript, leverage two-way data binding, handle form inputs, connect to APIs through http, set up routing and more.
 
 ## Repository contents
-* **/docs**: presentation slides
+* **[/docs](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/docs)**: presentation slides
 * **[/project_apps](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps)**: demonstration app broken down into development steps. Each of the project_apps directories is accompanied by a README file that will walk you through the given implementation.
-* **/resources**: miscellaneous resource documents
-* **/yelp_proxy**: a simple node proxy used to communicate with the Yelp API
+* **[/resources](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/resources)**: miscellaneous resource documents
+* **[/yelp_proxy](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/yelp_proxy)**: a simple node proxy used to communicate with the Yelp API
 
 ## Getting started
 
