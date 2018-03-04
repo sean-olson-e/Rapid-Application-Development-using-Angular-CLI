@@ -11,8 +11,8 @@ export class KeyManagerComponent implements OnInit {
   apiKey;
 
   /*
-    use of seperate property and event bindling require an event handler to assing
-    the updated values to the property. This can be eliminated with two-way binding
+    The use of separate property and event binding require an event handler to assign
+    the updated values to the property. This can be eliminated with two-way binding.
   */
   updateValue = (ev) => {
     this.apiKey = ev.target.value;

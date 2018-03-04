@@ -10,8 +10,15 @@ The Angular CLI ```new``` command provides a lot of resources, which may seem ov
 2. It provides a standard application architecture that supports team development.
 3. It facilitates rapid development with generator commands for components, services, directives and more.
 
-## Application Structure
+## The Angular Bootstrap Process
+The bootstrap process is controlled by these four files:  
+*	**main.ts**: contains the code for bootstrapping the application.
+*	**app.module.ts**: the root module that describes how the application parts fit together.
+*	**app.component.ts**: the top level application component, parent to all other components in the application.
+*	**index.html**: contains the directive where the app component will render the template. 
 
+
+## More on the Application Structure
 #### Root files and resources generated with ng new
 *	**.git file**
 *	**e2e directory**: store end-to-end tests

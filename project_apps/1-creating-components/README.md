@@ -8,16 +8,95 @@ form the [Angular API Documentation](https://angular.io/api/core/Component)
 
 > In addition to the metadata configuration specified via the Component decorator, components can control their runtime behavior by implementing various Life-Cycle hooks.
 
-## Project Step #1: Creting your first Component
+## Step One: Creating a Key-Manager Component
+The get started on our app, we need a way to save the Yelp API key we'll need to be able to use their API. For the purposes of this app we'll use the browser's localStorage API.  So begin by creating a component name 'key-manager'.
 
-* create a component name key-manager (ng generate component key-manager --spec false)
-* clean up the app component template (app.component.html) and include the tag for the key-manager (<app-key-manager></app-key-manager>)
-* add the html elements to the key-manager component template (key-manager.component.html)
-* create the properties and methods in the key-manager module (key-manager.component.ts)
-* wire up the one-way property bindings and event handlers in the key-manager template
-* include the FormModule in the application module (app.module.ts)
-* refactor the methods in the key-manager component module to use two-way binding
-* refactor the bindings in the key-manager component template to use two-way binding
+Using the Angular CLI from the root of the application run  
+
+```ng generate component key-manager --spec false)```
+
+By default, the Angular CLI will stub out a test module for the component. To simplify things here, we eliminate this by adding the ```--spec false``` flag to the generator command.
+
+### Anatomy of an Angular Component
+The CLI generates three key files that make up the functional component:
+* key-manager.component.ts: the component (TypeScript) code module
+* key-manager.component.html: the component html template
+* key-manager.component.css: the component-scoped css file
+
+In addition to generating the component files, the CLI also registers the component with the ```app.module.ts``` file, which controls how the parts of the app fit together.
+
+### Understanding the three parts of the component code module.
+An Angular component code module has three basic components:
+
+1. the import section at the heading of the component, where you will load the module libraries required by the component
+
+```
+import { Component, OnInit } from '@angular/core';
+```
+
+2. the component class that contains the functionality for the component
+```
+export class KeyManagerComponent implements OnInit {
+  constructor() { }
+
+  ngOnInit() {
+  }
+}
+``` 
+
+3. the @Component decorator that will add additional functionality to the component.  The CLI automatically add the three required properties:  the selector used to identify the directive, the URL for the component template; and the URL for the component CSS.
+
+```@Component({
+     selector: 'app-key-manager',
+     templateUrl: './key-manager.component.html',
+     styleUrls: ['./key-manager.component.css']
+   })
+
+```      
+
+### Wiring up the key-manager form template to use one-way property and event binding
+
+One-way binding in forms follows a simple pattern: 
+* form input properties use bracket syntax, ```[value]="property_name"``` 
+* form input events use parenthesis, ```(input)="handler($event)"
+* non-form elements use double-brace string interpolation, ```{{property_name}}```  
+
+
+```
+ <div>
+   <!-- using double-braces to bind properties using string interpolation -->
+   <label for="api-key">{{label}}: </label>
+   <!-- input uses one-way property binding and event binding seperately  -->
+   <input type="text" name="api-key" id="api-key" [value]="apiKey" (input)="updateValue($event)">
+   <button (click)='setApiKey($event)'>Save Key</button>
+ </div>
+```
+ 
+### Wiring up the key-manager form template to use two-way property and event binding
+
+Angular provides a mechanism for two-way binding on form elements, but two-way binding requires FormModule be imported into the ```app.module.ts``` first.
+
+```
+...
+
+import { FormsModule } from '@angular/forms';
+
+..*[]: 
+
+@NgModule({
+  ...
+  imports: [
+    FormsModule
+  ],
+  ...
+})
+export class AppModule { }
+```  
+
+
+With the FormsModule imported into the app, you can implement two-way binding with combined bracket-parenthesis syntax, ```[(ngModel)]="property_name"```
+
+#### Review [the completed code for this step](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/1-creating-components/src/snippets/key-manager) 
 
 
 ### Licensing
