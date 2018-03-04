@@ -173,157 +173,138 @@
 					```
 				</textarea>
 			</section>
-			<section data-markdown data-background="img/bg-5.png">
+			<section data-markdown data-background="img/bg-6.png">
 				<textarea data-template>
-					## Components
-					- Let's create an Angular component using the CLI
+					## What Gets Generated?
+					- A really simple HTML template -- really simple
 
 					```
-						#navigate into the root of project_apps/1-creating-components and run
-						ng generate component key-manager --spec false
+					<p>
+					  key-manager works!
+					</p>
 
 					```
 				</textarea>
 			</section>
-			<section data-markdown data-background="img/bg-4.png">
+			<section data-markdown data-background="img/bg-6.png">
+				<textarea data-template>
+					## What Else Gets Generated?
+					- The Component Module
+
+					```
+						import { Component, OnInit } from '@angular/core';
+
+						@Component({
+						  selector: 'app-key-manager',
+						  templateUrl: './key-manager.component.html',
+						  styleUrls: ['./key-manager.component.css']
+						})
+						export class KeyManagerComponent implements OnInit {
+
+						  constructor() { }
+
+						  ngOnInit() {
+						  }
+
+						}
+
+					```
+				</textarea>
+			</section>
+			<section data-markdown data-background="img/bg-5.png">
+				<textarea data-template>
+					## Does the generator do anything else?
+					- Yes.  In addition to generating css and test modules, it registers the component with the ```app.module.ts``` file.
+
+					```
+					import { BrowserModule } from '@angular/platform-browser';
+					import { NgModule } from '@angular/core';
+					import { AppComponent } from './app.component';
+					import { KeyManagerComponent } from './key-manager/key-manager.component';
+
+					@NgModule({
+					  declarations: [
+						AppComponent,
+						KeyManagerComponent
+					  ],
+					  ...
+					})
+					export class AppModule { }
+
+					```
+				</textarea>
+			</section>
+			<section data-markdown data-background="img/bg-6.png">
+				<textarea data-template>
+					### Rendering the Component
+
+					You can include a component in the rendered application, simply by adding the template selector to andother HTML template.  In this case we add it to the ```app.component.html```
+
+
+					```
+ 						<app-key-manager></app-key-manager>
+
+					```
+				</textarea>
+			</section>
+			<section data-markdown data-background="img/bg-7.png">
+				<textarea data-template>
+					![app screenshot](img/component_anatomy.png)
+				</textarea>
+			</section>
+			<section data-markdown data-background="img/bg-6.png">
 				<textarea data-template>
 					## TypeScript, Briefly
+
+					TypeScript is a language for application-scale JavaScript. TypeScript adds optional types, classes, and modules to JavaScript. TypeScript supports tools for large-scale JavaScript applications for any browser, for any host, on any OS. TypeScript compiles to readable, standards-based JavaScript.
+
+
+					### Resources
+					- [Basic Types](https://www.typescriptlang.org/docs/handbook/basic-types.html)
+					- [TypeScript Wiki](https://github.com/Microsoft/TypeScript/wiki)
+					- [TypeScript Playground](https://www.typescriptlang.org/play/)
 				</textarea>
 			</section>
-
 			<section data-markdown data-background="img/bg-5.png" data-state="blockquote-smaller">
 				<textarea data-template>
+					## One-Way Form Binding & String Interpolation
+
+					```
+						<div>
+						  <!-- using double-braces to bind properties using string interpolation -->
+						  <label for="api-key">{{label}}: </label>
+							<!-- input uses one-way property binding and event binding seperately  -->
+						  <input type="text" name="api-key" id="api-key" [value]="apiKey" (input)="updateValue($event)">
+						  <button (click)='setApiKey($event)'>Save Key</button>
+						</div>
+					```
 
 				</textarea>
 			</section>
-
-			<section data-markdown data-background="img/bg-6.png">
+			<section data-markdown data-background="img/bg-5.png" data-state="blockquote-smaller">
 				<textarea data-template>
+					## Two-Way Form Binding
+
+					```
+						<div>
+						  <!-- using double-braces to bind properties using string interpolation -->
+						  <label for="api-key">{{label}}: </label>
+						  <input type="password" name="api-key" id="api-key" [(ngModel)]="apiKey">
+						  <button (click)='setApiKey($event)'>Save Key</button>
+						</div>
+					```
+
+					Two-way binding requires the FormsModule to be imported through the [app.module.ts](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/blob/master/project_apps/2-importing-styles-using-built-in-directives/src/app/app.module.ts)
 
 				</textarea>
 			</section>
+			<section data-markdown data-background="img/bg-5.png" data-state="blockquote-smaller">
+				<textarea data-template>
+					## Review the Completed Code
 
-			<section data-markdown data-background="img/bg-6.png">
-				<textarea data-template>
-					## 4-types-for-arcgis-api
-					
-					- More info is available at https://github.com/Esri/jsapi-resources/
-
-						```ts
-						// without
-						const map = new EsriMap({ /* zoom, center, etc. */ });
-
-						// with
-						const mapProperties: esri.MapProperties = {
-							basemap: 'streets'
-						};
-						const map: esri.Map = new EsriMap(mapProperties);
-						```
-
-						```ts
-						// without
-						const arrayOfGraphics = [];
-						const myGraphic = new Graphic({ /* geometry, symbol, etc. */ });
-						arrayOfGraphics.push(myGraphic)
-
-						// with
-						const arrayOfGraphics: esri.Graphic[] = [];
-						const myGraphic: esri.Graphic = new Graphic({ /* geometry, symbol, etc. */ });
-						arrayOfGraphics.push(myGraphic);
-						```
+					-  View the [completed code](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/1-creating-components/src/snippets/key-manager) in the repository
 				</textarea>
 			</section>
-
-			<section data-markdown data-background="img/bg-6.png">
-				<textarea data-template>
-					## 4-types-for-arcgis-api
-					
-					Example of IntelliSense in VS Code
-
-					![autocomplete screenshot](img/autocomplete_screenshot.png)
-						
-					Thanks, type definitions!
-				</textarea>
-			</section>
-
-			<section data-markdown data-background="img/bg-7.png">
-				<textarea data-template>
-					![asynchronous operations](img/async_operations.png)
-				</textarea>
-			</section>
-			<section data-markdown data-background="img/bg-7.png">
-				<textarea data-template>
-					![asynchronous patterns](img/async_pattern_options.png)
-				</textarea>
-			</section>
-			<section data-markdown data-background="img/bg-8.png">
-				<textarea data-template>
-					![app screenshot](img/app_screenshot.png)
-				</textarea>
-			</section>
-			<section data-markdown data-background="img/bg-6.png">
-				<textarea data-template>
-					![asynchronous operations](img/async_promises.png)
-				</textarea>
-			</section>
-			<section data-markdown data-background="img/bg-8.png">
-				<textarea data-template>
-					![asynchronous operations](img/async_events.png)
-				</textarea>
-			</section>
-			<section data-markdown data-background="img/bg-8.png">
-				<textarea data-template>
-					![asynchronous operations](img/async_observables.png)
-				</textarea>
-			</section>
-			<section data-markdown data-background="img/bg-9.png">
-				<textarea data-template>
-					![app screenshot](img/state_management.png)
-				</textarea>
-			</section>
-			<section data-markdown data-background="img/bg-8.png">
-				<textarea data-template>
-					![app screenshot](img/app_screenshot_2.png)
-				</textarea>
-			</section>
-			<section data-markdown data-background="img/bg-9.png">
-				<textarea data-template>
-					![app screenshot](img/state_management_schema.png)
-				</textarea>
-			</section>
-			<section data-markdown data-background="img/bg-3.png">
-				<textarea data-template>
-					## 9-arcgis-api-service
-			
-					- Refactor sample 2 to move map creation to a service
-					- Create the map service
-					- Inject the service into `app.component`
-					- Replace the old `loadModules()` code with the new map service
-				</textarea>
-			</section>
-
-			<section data-markdown data-background="img/bg-4.png">
-				<textarea data-template>
-					## 10-ionic
-			
-					- Using the ArcGIS API for JavaScript with Ionic.
-					- Ionic is built on Angular
-					- Ionic life-cycle: async/await
-				</textarea>
-			</section>
-
-			<section data-markdown data-background="img/bg-5.png">
-				<textarea data-template>
-					## Where to get help: Esri JSAPI
-					
-					- https://js.arcgis.com
-
-					- [GeoNet: ArcGIS API for JavaScript Community](https://community.esri.com/community/developers/web-developers/arcgis-api-for-javascript)
-
-					- [GIS Stack Exchange](https://gis.stackexchange.com/)
-				</textarea>
-			</section>
-
 			<section data-markdown data-background="img/bg-5.png">
 				<textarea data-template>
 					## Where to get help: Angular
@@ -335,59 +316,26 @@
 					- Your own favorite places for web dev help
 				</textarea>
 			</section>
-
 			<section data-markdown data-background="img/bg-5.png">
 				<textarea data-template>
-					## Where to get help: esri-loader
+					## Where to get help: Esri JSAPI
 
-					- The [README](https://github.com/Esri/esri-loader/blob/master/README.md) is phenomenal and up-to-date
-					- New Github issue? 
-						- must include a live demo that shows the specific problem with esri-loader
+					- https://js.arcgis.com
 
-					![issue template screenshot](img/issue-template.png)
+					- [GeoNet: ArcGIS API for JavaScript Community](https://community.esri.com/community/developers/web-developers/arcgis-api-for-javascript)
+
+					- [GIS Stack Exchange](https://gis.stackexchange.com/)
 				</textarea>
 			</section>
-
-			<section data-markdown data-background="img/bg-5.png">
-				<textarea data-template>
-					## Additional resources
-
-					- http://esriurl.com/13900
-					
-					  - Github "sean-olson-e/Angular-and-the-ArcGIS-API-for-JavaScript"
-
-					- https://github.com/Esri/angular-cli-esri-map
-
-					- ["Esri/esri-loader"](https://github.com/Esri/esri-loader) is your new friend
-
-					- [Related presentations this week](#/presentations-this-week)
-
-					- Tom Wayson's blog: ["Loader of the Things: One Library to Load Them All"](http://tomwayson.com/2018/01/05/loader-of-the-things-one-library-to-load-them-all/)
-
-					- And more Angular info at ["Esri/jsapi-resources"](https://github.com/Esri/jsapi-resources/tree/master/frameworks/angular)
-				</textarea>
-			</section>
-
 			<section data-background="img/bg-6.png" data-background-size="cover" style="padding-left: 28%;">
 				<h1 style="text-align: left; font-size: 80px;">
 					Thank you
 				</h1>
-				<p style="text-align: left; display: flex; align-items: center;">
-					<span style="text-transform: uppercase;">Andy Gup</span>
-					<a href="https://twitter.com/agup" target="_blank">
-						<img src="img/Twitter_Logo_WhiteOnImage.png" width="50" style="border: none; vertical-align: middle; margin-left: 50px; margin-right: 10px;">@agup
-					</a>
-				</p>
+
 				<p style="text-align: left; display: flex; align-items: center;">
 					<span style="text-transform: uppercase;">Sean Olson</span>
 					<a href="https://www.linkedin.com/in/seanolson-io/" target="_blank">
 						<img src="img/In-White-121px-R.png" width="50" style="border: none; vertical-align: middle; margin-left: 50px; margin-right: 10px;">seanolson-io
-					</a>
-				</p>
-				<p style="text-align: left; display: flex; align-items: center;">
-					<span style="text-transform: uppercase;">Jacob Wasilkowski</span>
-					<a href="https://twitter.com/JWasilGeo" target="_blank">
-						<img src="img/Twitter_Logo_WhiteOnImage.png" width="50" style="border: none; vertical-align: middle; margin-left: 50px; margin-right: 10px;">@JWasilGeo
 					</a>
 				</p>
 			</section>
