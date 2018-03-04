@@ -1,5 +1,5 @@
 # Rapid-Application-Development-using-Angular-CLI
-This repository was developed to support the [*Esri Dev Summit 2018* presentation](http://www.esri.com/events/devsummit/agenda?adumkts=branding&aduc=advertising&adum=ppc&aduSF=google&utm_Source=conference&aduca=m18devsummit&aduco=ppc_brand_sitelink&adut=agenda&aducp=esri_corp_events&adupt=devsummit) of similar name. This repository provides code samples that will walk you through Angular CLI basics to quickly standup an Angular app that uses the ArcGIS API for JavaScript. Working through these app in sequence you’ll create an app, generate components and services, implement the ArcGIS API for JavaScript, leverage two-way data binding, handle form inputs, connect to APIs through http, set up routing and more.
+This repository was developed to support the [*Esri Dev Summit 2018* presentation](https://devsummit2018.schedule.esri.com/schedule/433914485) of similar name. This repository provides code samples that will walk you through Angular CLI basics to quickly standup an Angular app that uses the ArcGIS API for JavaScript. Working through these app in sequence you’ll create an app, generate components and services, implement the ArcGIS API for JavaScript, leverage two-way data binding, handle form inputs, connect to APIs through http, set up routing and more.
 
 ## Repository contents
 * **[/docs](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/docs)**: presentation slides
@@ -14,11 +14,10 @@ This repository was developed to support the [*Esri Dev Summit 2018* presentatio
 # if you don't already have the Angular CLI installed
 npm install -g @angular/cli
 
-# choose your paroject app
+# run any of the project apps
 cd ./project_apps/<your-choice>
 
-# STOP CODING AND READ THE SAMPLE'S README
-# THEN YOU MAY CONTINUE
+# review the project_app's readme file for step-by-step instructions
 
 # one-time only
 npm install
@@ -28,6 +27,13 @@ ng serve
 
 # every time you want to build
 ng build --base-href ./
+
+
+# running the Yelp proxy
+cd ./yelp_proxy/
+npm install
+npm start
+
 ```
 
 ### Licensing
