@@ -13,32 +13,32 @@ Angular CLI provides a lot, which may seem overwhelming at first, but there are 
 ## Application Structure
 
 #### Root files and resources generated with ng new
-*	.git file
-*	e2e directory: store end-to-end tests
-*	node_modules directory: holds all the project dependencies
-*	src directory: all of the code that comprises the application.
-*	.angular-cli.json: manages general configuration settings for your project
-*	.editorconfig: opensource cross-IDE configuration
-*	.gitignore: determines which files and folders are not committed to git repository
-*	karma.conf.js: controls testing
-*	package.json: manages all project dependencies
-*	package-lock.json: specifies tree structure, created when npm modifies node_modules or package.json: specifices the npm dependencies 
-*	protractor.conf.js: supports testing also
-*	README.md
-*	tsconfig.json: determines how TypeScript is compiled
-*	tslint.json: used for linting, checking that code is clean 
+*	**.git file**
+*	**e2e directory**: store end-to-end tests
+*	**node_modules directory**: holds all the project dependencies
+*	**src directory**: all of the code that comprises the application.
+*	**.angular-cli.json**: manages general configuration settings for your project
+*	**.editorconfig**: opensource cross-IDE configuration
+*	**.gitignore**: determines which files and folders are not committed to git repository
+*	**karma.conf.js**: controls testing
+*	**package.json**: manages all project dependencies
+*	**package-lock.json**: specifies tree structure, created when npm modifies node_modules or package.json: specifices the npm dependencies 
+*	**protractor.conf.js**: supports testing also
+*	**README.md**
+*	**tsconfig.json**: determines how TypeScript is compiled
+*	**tslint.json**: used for linting, checking that code is clean 
 
 #### /src directories and files and resources generated with ng new
-*	app directory: contains all the all source code
-*	assets directory: used to store static assets
-*	environments directory: allows for management of various environment variables
-*	favicon.ico: browser icon for application
-*	index.html: application host that contains the application root component
-*	main.ts: contains code for starting/bootstrapping the application
-*	polyfills.ts: manages polyfills that allow code to run in older browsers 
-*	styles.css: used for global styles for the applciation
-*	test.ts: used for tests
-*	tsconfig.app.json: used for TypeScript compilation
-*	tsconfig.spec.json: used for TypeScript compilation
-*	typings.s.ts: used for TypeScript compilation
+*	**app directory**: contains all the all source code
+*	**assets directory**: used to store static assets
+*	**environments directory**: allows for management of various environment variables
+*	**favicon.ico**: browser icon for application
+*	**index.html**: application host that contains the application root component
+*	**main.ts**: contains code for starting/bootstrapping the application
+*	**polyfills.ts**: manages polyfills that allow code to run in older browsers 
+*	**styles.css**: used for global styles for the applciation
+*	**test.ts**: used for tests
+*	**tsconfig.app.json**: used for TypeScript compilation
+*	**tsconfig.spec.json**: used for TypeScript compilation
+*	**typings.s.ts**: used for TypeScript compilation
 
