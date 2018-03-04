@@ -64,9 +64,7 @@ One-way binding in forms follows a simple pattern:
 
 ```
  <div>
-   <!-- using double-braces to bind properties using string interpolation -->
    <label for="api-key">{{label}}: </label>
-   <!-- input uses one-way property binding and event binding seperately  -->
    <input type="text" name="api-key" id="api-key" [value]="apiKey" (input)="updateValue($event)">
    <button (click)='setApiKey($event)'>Save Key</button>
  </div>
@@ -95,6 +93,16 @@ export class AppModule { }
 
 
 With the FormsModule imported into the app, you can implement two-way binding with combined bracket-parenthesis syntax, ```[(ngModel)]="property_name"```
+
+
+```
+
+<div>
+  <label for="api-key">{{label}}: </label>
+  <input type="password" name="api-key" id="api-key" [(ngModel)]="apiKey">
+  <button (click)='setApiKey($event)'>Save Key</button>
+</div>
+```
 
 #### Review [the completed code for this step](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/1-creating-components/src/snippets/key-manager) 
 
