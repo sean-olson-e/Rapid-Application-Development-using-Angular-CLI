@@ -8,7 +8,8 @@
 ## Step Three: Create a dashboard component that nests the key-manager and the cuisine-type-list
 
 In this section we're going to add a little more intelligence into our UI.  We want to be able to hide the key-manager form once the user 
-has entered the key, but allow for the user to change it.  Also, we want to hide the cuisine type list if the user hasn't entered the key.  
+has entered the key, but allow for the user to change it.  Also, we want to hide the cuisine type list if the user hasn't entered the key.
+  
 To create this kind of dynamic UI, we need to communicate between components, so one knows the state of the other.
 There are a few ways to accomplish this, but in this case we'll nest our key manager and cuisine-type list inside a dashboard component and use shared properties 
 and custom events to link them.  
