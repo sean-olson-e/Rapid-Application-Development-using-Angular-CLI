@@ -9,16 +9,23 @@
 
 > In addition to the metadata configuration specified via the Component decorator, components can control their runtime behavior by implementing various Life-Cycle hooks.
 
-## Step One: Creating a Key-Manager Component
-The get started on our app, we need a way to save the Yelp API key we'll need to be able to use their API. For the purposes of this app we'll use the browser's localStorage API.  So begin by creating a component name 'key-manager'.
+## Step One: Create a Component & Bind Properties to a Template
+The get started on our app, we need a way to save the Yelp API key we'll need to be able to use their API. For the 
+purposes of this app we'll use the browser's localStorage API.  So begin by creating a component name 'key-manager'.
 
-Using the Angular CLI from the root of the application run  
+### Step One Resources:
+* [Code Snippets](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/1-creating-components/src/snippets/key-manager)
+* [Completed Code](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/2-importing-styles-using-built-in-directives/src/app)
+
+### a: Creating a Key-Manager Component
+ Using 
+the Angular CLI from the root of the application run  
 
 ```ng generate component key-manager --spec false)```
 
 By default, the Angular CLI will stub out a test module for the component. To simplify things here, we eliminate this by adding the ```--spec false``` flag to the generator command.
 
-### Anatomy of an Angular Component
+#### Anatomy of an Angular Component
 The CLI generates three key files that make up the functional component:
 * key-manager.component.ts: the component (TypeScript) code module
 * key-manager.component.html: the component html template
@@ -26,7 +33,7 @@ The CLI generates three key files that make up the functional component:
 
 In addition to generating the component files, the CLI also registers the component with the ```app.module.ts``` file, which controls how the parts of the app fit together.
 
-### Understanding the three parts of the component code module.
+#### Understanding the three parts of the component code module.
 An Angular component code module has three basic components:
 
 1. the import section at the heading of the component, where you will load the module libraries required by the component
