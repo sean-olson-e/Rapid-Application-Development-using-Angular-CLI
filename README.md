@@ -1,5 +1,10 @@
 # Rapid-Application-Development-using-Angular-CLI
-This repository was developed to support the [*Esri Dev Summit 2018* presentation](https://devsummit2018.schedule.esri.com/schedule/433914485) of similar name. This repository provides code samples that will walk you through Angular CLI basics, helping you to quickly standup an Angular app that uses the ArcGIS API for JavaScript. Working through the project_apps samples, you’ll create an app, generate components, implement data binding, handle form inputs, create services, set up routing, implement the ArcGIS API for JavaScript and more.
+This repository was developed as a self-teaching tool, first presented at the [*Esri Dev Summit 2018* presentation](https://devsummit2018.schedule.esri.com/schedule/433914485) presentation of similar name.
+It it you will find a code samples, documentaiton and other resources  to walk you, step-by-step, through the application
+development process using Angular and the Angular CLI.  Each of the [project_apps subfolders](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps)
+contains a version of the app at one stage of the development process, a README file that provides instruction, and snippets
+folder that has the completed code for that step. The goal is to provide users a hands-on experience with the essential
+technologies and development patterns of Angular (2+) development.
 
 ## Repository contents
 * **[/docs](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/docs)**: presentation slides

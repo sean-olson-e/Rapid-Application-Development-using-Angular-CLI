@@ -25,15 +25,16 @@ The Angular Router enables navigation from one view to the next as users perform
 * ``` ng g c map-panel --spec false ```  
 
 ### c: Reorganize the component structure
-1. Remove the key-manager component from the dashboard component template.
-2. Remove the dashboard component from the app component template.
-3. Add the console and key-manager components to the app component template.
+1. Remove the key-manager component from the dashboard component template and nest it under the app component template.
+2. Add the console and key-manager components to the app component template.
+3. Remove the dashboard component from the app component template, and nest it within the console component template.
+4. Add the directives for the search and map components to the dashboard template
 
 ### d: Refactor the key-manager logic to use the YelpService 
 1. Inject Yelp Service into the app and key manager component modules.
-2. Refactor the save/reset methods in the key-manager component module to use YelpService module
-3. Refactor the key managers event emitter to raise the event to the app module
-4. Refactor the app module to bind the api-key to the property to the key-manger
+2. Refactor the save/reset methods in the key-manager component module to use YelpService module.
+3. Refactor the key managers event emitter to raise the event to the app module.
+4. Refactor the app module to bind the api-key to the property to the key-manger.
 5. Use the ng-If directive to show/hide the console module, dependant if the user has an API key.
 
 ### e: Add routing to your application
@@ -59,7 +60,7 @@ The Angular Router enables navigation from one view to the next as users perform
 
 ### f: Add navigation elements
 
-1. Add buttons to the key-manager template to function as navaigation contols
+1. Add buttons to the key-manager template to function as navigation controls
 2. Configure the routerLink and activeRouterLink attributes on the buttons
 
 ```
@@ -69,9 +70,6 @@ The Angular Router enables navigation from one view to the next as users perform
         <button type="submit" class="btn btn-reset float-right" (click)='resetKey()'>Reset your Yelp API Key</button>
     </div>
 ```    
-
-### g: Rework the dashboard template
-* Add the serach-panel and map-panel directives to the dashboard template
 
 ### Licensing
 
