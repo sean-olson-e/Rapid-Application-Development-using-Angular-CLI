@@ -1,7 +1,7 @@
 # Configuring Routes
 The Angular Router enables navigation from one view to the next as users perform application tasks. You can read more about Routing and Navigation [here](https://angular.io/guide/router). Routing is often requied as simple apps grow into more complex apps. 
 
-## Project Step #5: Add routing to support a more-developed UI
+## Step Five: Add routing to support a more-developed UI
 
 ### a: Create a service to manage the yelp key and api calls
 1. Generate a Yelp service -- run **``` ng g s yelp --flat true --spec false ```** from the Angular CLI.
