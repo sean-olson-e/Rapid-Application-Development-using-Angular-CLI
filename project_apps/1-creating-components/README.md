@@ -172,26 +172,6 @@ export class KeyManagerComponent implements OnInit {
   }
 ```
 
-
-
- 
-
-
-With the FormsModule imported into the app, you can implement two-way binding with combined bracket-parenthesis syntax, ```[(ngModel)]="property_name"```
-
-
-```
-
-<div>
-  <label for="api-key">{{label}}: </label>
-  <input type="password" name="api-key" id="api-key" [(ngModel)]="apiKey">
-  <button (click)='setApiKey($event)'>Save Key</button>
-</div>
-```
-
-#### Review [the completed component modules for this step](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/1-creating-components/src/snippets/key-manager) 
-
-
 ### Licensing
 
 Copyright 2018 Esri
