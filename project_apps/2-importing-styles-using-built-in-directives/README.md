@@ -1,13 +1,13 @@
-# Importing Styles and Using Angular Built-In Directives
-There are many built-in directives in Angular, designed to assist with common tasks.  You can browse the. in (The Angular API)[https://angular.io/api]
+# Importing Styles and Using Angular's Built-In ngFor Directive
+There are many built-in directives in Angular, designed to assist with common tasks.  You can browse the. in [The Angular API](https://angular.io/api)
 
-## Commonly Used Diretives
+## Commonly Used Directives
 * [ngIf](https://angular.io/api/common/NgIf) -- Conditionally includes a template based on the value of an expression.
 * [ngFor / NgForOf](https://angular.io/api/common/NgForOf) -- The NgForOf directive instantiates a template once per item from an iterable. The context for each instantiated template inherits from the outer context with the given loop variable set to the current item from the iterable.
 * [ngStyle](https://angular.io/api/common/NgStyle) --The styles are updated according to the value of the expression evaluation.
 * [ngClass](https://angular.io/api/common/NgClass) -- The CSS classes are updated as follows, depending on the type of the expression evaluation.
 
-## Project Step #2: Import Style Files and Creating more Components
+## Step Two: Importing Global Styles and Creating more Components
 
 ### a: Import Bootstrap and Font Awesome Styles
 * use npm to install Bootstrap: npm install bootstrap --save 
@@ -22,18 +22,219 @@ There are many built-in directives in Angular, designed to assist with common ta
       ],
 
 ### b: Restyle the key-manager component template
-* copy and paste key-manager.components.txt snippets file into component template
+* replace the markup in the key-manager component template with this snippet (also in src/snippets/key-manager.components.txt)
+
+```
+  <div class="container">
+    <div class="row">
+      <form class="col-6">
+        <div class="form-group">
+          <label for="api-key">{{label}}</label>
+          <input class="form-control col-12" type="text" name="api-key" id="api-key" [(ngModel)]="apiKey" />
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary" (click)='setApiKey($event)'>Save Key</button>
+        </div>
+      </form>
+    </div>
+  </div>
+```
 
 ### c: Create a header component
-* from the console create a header component (ng generate component header --spec false)
-* add a property name "title" to the the header component module (header.component.ts)
+* from the terminal create the header component.
+ ```
+  ng generate component header --spec false
+```
+  
+* add a "title" property to the the header component module (header.component.ts)
+```
+  import { Component, OnInit } from '@angular/core';
+  
+  @Component({
+    selector: 'app-header',
+    templateUrl: './header.component.html',
+    styleUrls: ['./header.component.css']
+  })
+  export class HeaderComponent implements OnInit {
+    title = 'Where to Eat?';
+    constructor() { }
+    ngOnInit() {
+    }
+  }
+```
 * add an h1 tag to the header component template (header.component.html) and bind the title property inside the tag using double braces (string interpolation)
+```
+<div class="container">
+  <div class="row ">
+    <h1 class="col-12 header">{{title}}</h1>
+  </div>
+</div>
+```
+
 * add the header tag to the top of the app component template (app.component.html)
+
+```
+<app-header></app-header>
+<app-key-manager></app-key-manager>
+<app-cuisine-type-list></app-cuisine-type-list>
+```
 
 
 ### d: Create a cuisine type list component
-* from the console create a cuisine-type-list component (ng generate component cuisine-type-list --spec false)
-* see code snippet files for direction
+* from the terminal create a cuisine-type-list component,
+ ```
+  ng generate component cuisine-type-list --spec false
+```
+  
+* copy this snippet into the cuisine-type-list module
+
+```
+  import { Component, OnInit } from '@angular/core';
+  
+  @Component({
+    selector: 'app-cuisine-type-list',
+    templateUrl: './cuisine-type-list.component.html',
+    styleUrls: ['./cuisine-type-list.component.css']
+  })
+  export class CuisineTypeListComponent implements OnInit {
+    cuisineTypes: string[] = ['Chinese', 'Indian', 'Italian', 'Thai'] ;
+    newType = {
+      adding: false,
+      type: ''
+    };
+    editedType = {
+      editing: false,
+      index: -1,
+      stale: '',
+      fresh: ''
+    };
+  
+    sortTypes = () => {
+      this.cuisineTypes.sort((a: string, b: string) => {
+        return a < b ? -1 : 1;
+      });
+    }
+  
+    isNewType = () => {
+      const new_type = this.newType.type.toLocaleLowerCase();
+      for (let i = 0; i < this.cuisineTypes.length; i++) {
+        if (this.cuisineTypes[i].toLowerCase() === new_type){
+          return false;
+        }
+      }
+      return true;
+    }
+  
+    addNewType = () => {
+      if (this.editedType.editing) {
+        this.cancelEditType();
+      }
+      this.newType.adding = true;
+    }
+  
+    saveNewType = () => {
+      if (this.newType.type !== '' && this.isNewType()) {
+        this.cuisineTypes.push(this.newType.type);
+        this.sortTypes();
+      }
+      this.cancelNewType();
+    }
+  
+    cancelNewType = () => {
+      this.newType.adding = false;
+      this.newType.type = '';
+    }
+  
+    editType = (ix) => {
+      if (this.newType.adding) {
+        this.cancelNewType();
+      }
+      this.editedType.editing = true;
+      this.editedType.index = ix;
+      this.editedType.stale = this.cuisineTypes[ix];
+      this.editedType.fresh = this.editedType.stale;
+    }
+    deleteType = (ix) => {
+      if (this.editedType.editing) {
+        this.cancelEditType();
+      }
+      this.cuisineTypes.splice(ix, 1);
+    }
+    saveEditType = () => {
+      if (this.editedType.fresh !== '' && this.editedType.fresh !== this.editedType.stale) {
+        this.cuisineTypes[this.editedType.index] = this.editedType.fresh;
+        this.sortTypes();
+      }
+      this.cancelEditType();
+    }
+    cancelEditType = () => {
+      this.editedType.editing = false;
+      this.editedType.index = -1;
+      this.editedType.stale = '';
+      this.editedType.fresh = '';
+    }
+    constructor() {}
+  
+    ngOnInit() {}
+  }
+```
+
+* copy this snippet into the cuisine-type-list template
+
+```
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <table class="table table-bordered table-striped table-hover">
+          <thead>
+            <tr>
+              <th class="text-center type-cell">Cuisine Type</th>
+              <th class="text-center control-cell">&nbsp;</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let type of cuisineTypes; let ix = index">
+              <td class="">{{ type }}</td>
+              <td class="">
+                <button class="btn btn-info" (click)="editType(ix)">
+                  <i class="fa fa-edit"></i>
+                </button>
+                <button class="btn btn-danger" (click)="deleteType(ix)">
+                  <i class="fa fa-minus"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <button class="btn btn-success" (click)="addNewType()">
+          <i class="fa fa-plus"></i>
+        </button>
+  
+        <form *ngIf="newType.adding" class="type-form">
+          <div class="form-group">
+            <h5>Add Cuisine Type</h5>
+            <input type="text" class="col-12" name="new-type" id="new-type" [(ngModel)]="newType.type" />
+          </div>
+          <div class="form-group">
+            <button type="button" class="btn btn-primary" (click)="saveNewType()">Save</button>
+            <button type="button" class="btn btn-warning" (click)="cancelNewType()">Cancel</button>
+          </div>
+        </form>
+  
+        <form *ngIf="editedType.editing" class="type-form">
+          <h5>Edit Cuisine Type</h5>
+          <div class="form-group">
+            <label for="edit-type"></label>
+            <input type="text" name="edit-type" id="edit-type" [(ngModel)]="editedType.fresh" />
+          </div>
+          <div class="form-group">
+            <button type="button" class="btn btn-primary" (click)="saveEditType()">Save</button>
+            <button type="button" class="btn btn-warning" (click)="cancelEditType()">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+```  
 
 ### Licensing
 

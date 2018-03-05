@@ -289,6 +289,7 @@
 						<div>
 						  <!-- using double-braces to bind properties using string interpolation -->
 						  <label for="api-key">{{label}}: </label>
+							<!-- input uses two-way binding, combining property and event  -->
 						  <input type="password" name="api-key" id="api-key" [(ngModel)]="apiKey">
 						  <button (click)='setApiKey($event)'>Save Key</button>
 						</div>
