@@ -1,4 +1,4 @@
-# Importing Styles and Using Angular's Built-In ngFor Directive
+# Importing Styles and Using Angular's Built-In Directives
 There are many built-in directives in Angular, designed to assist with common tasks.  You can browse the. in [The Angular API](https://angular.io/api)
 
 ## Commonly Used Directives
@@ -86,155 +86,12 @@ There are many built-in directives in Angular, designed to assist with common ta
   ng generate component cuisine-type-list --spec false
 ```
   
-* copy this snippet into the cuisine-type-list module
+* copy the code from [the snippets file](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/blob/master/project_apps/2-importing-styles-using-built-in-directives/src/snippets/cuisine-type-list.component.ts.txt) into the cuisine-type-list 
 
-```
-  import { Component, OnInit } from '@angular/core';
-  
-  @Component({
-    selector: 'app-cuisine-type-list',
-    templateUrl: './cuisine-type-list.component.html',
-    styleUrls: ['./cuisine-type-list.component.css']
-  })
-  export class CuisineTypeListComponent implements OnInit {
-    cuisineTypes: string[] = ['Chinese', 'Indian', 'Italian', 'Thai'] ;
-    newType = {
-      adding: false,
-      type: ''
-    };
-    editedType = {
-      editing: false,
-      index: -1,
-      stale: '',
-      fresh: ''
-    };
-  
-    sortTypes = () => {
-      this.cuisineTypes.sort((a: string, b: string) => {
-        return a < b ? -1 : 1;
-      });
-    }
-  
-    isNewType = () => {
-      const new_type = this.newType.type.toLocaleLowerCase();
-      for (let i = 0; i < this.cuisineTypes.length; i++) {
-        if (this.cuisineTypes[i].toLowerCase() === new_type){
-          return false;
-        }
-      }
-      return true;
-    }
-  
-    addNewType = () => {
-      if (this.editedType.editing) {
-        this.cancelEditType();
-      }
-      this.newType.adding = true;
-    }
-  
-    saveNewType = () => {
-      if (this.newType.type !== '' && this.isNewType()) {
-        this.cuisineTypes.push(this.newType.type);
-        this.sortTypes();
-      }
-      this.cancelNewType();
-    }
-  
-    cancelNewType = () => {
-      this.newType.adding = false;
-      this.newType.type = '';
-    }
-  
-    editType = (ix) => {
-      if (this.newType.adding) {
-        this.cancelNewType();
-      }
-      this.editedType.editing = true;
-      this.editedType.index = ix;
-      this.editedType.stale = this.cuisineTypes[ix];
-      this.editedType.fresh = this.editedType.stale;
-    }
-    deleteType = (ix) => {
-      if (this.editedType.editing) {
-        this.cancelEditType();
-      }
-      this.cuisineTypes.splice(ix, 1);
-    }
-    saveEditType = () => {
-      if (this.editedType.fresh !== '' && this.editedType.fresh !== this.editedType.stale) {
-        this.cuisineTypes[this.editedType.index] = this.editedType.fresh;
-        this.sortTypes();
-      }
-      this.cancelEditType();
-    }
-    cancelEditType = () => {
-      this.editedType.editing = false;
-      this.editedType.index = -1;
-      this.editedType.stale = '';
-      this.editedType.fresh = '';
-    }
-    constructor() {}
-  
-    ngOnInit() {}
-  }
-```
 
-* copy this snippet into the cuisine-type-list template
+* copy markup from [the snippets file](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/blob/master/project_apps/2-importing-styles-using-built-in-directives/src/snippets/cuisine-type-list.component.html.txt) into the cuisine-type-list template
 
-```
-  <div class="container">
-    <div class="row">
-      <div class="col-6">
-        <table class="table table-bordered table-striped table-hover">
-          <thead>
-            <tr>
-              <th class="text-center type-cell">Cuisine Type</th>
-              <th class="text-center control-cell">&nbsp;</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let type of cuisineTypes; let ix = index">
-              <td class="">{{ type }}</td>
-              <td class="">
-                <button class="btn btn-info" (click)="editType(ix)">
-                  <i class="fa fa-edit"></i>
-                </button>
-                <button class="btn btn-danger" (click)="deleteType(ix)">
-                  <i class="fa fa-minus"></i>
-                </button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <button class="btn btn-success" (click)="addNewType()">
-          <i class="fa fa-plus"></i>
-        </button>
-  
-        <form *ngIf="newType.adding" class="type-form">
-          <div class="form-group">
-            <h5>Add Cuisine Type</h5>
-            <input type="text" class="col-12" name="new-type" id="new-type" [(ngModel)]="newType.type" />
-          </div>
-          <div class="form-group">
-            <button type="button" class="btn btn-primary" (click)="saveNewType()">Save</button>
-            <button type="button" class="btn btn-warning" (click)="cancelNewType()">Cancel</button>
-          </div>
-        </form>
-  
-        <form *ngIf="editedType.editing" class="type-form">
-          <h5>Edit Cuisine Type</h5>
-          <div class="form-group">
-            <label for="edit-type"></label>
-            <input type="text" name="edit-type" id="edit-type" [(ngModel)]="editedType.fresh" />
-          </div>
-          <div class="form-group">
-            <button type="button" class="btn btn-primary" (click)="saveEditType()">Save</button>
-            <button type="button" class="btn btn-warning" (click)="cancelEditType()">Cancel</button>
-          </div>
-        </form>
-      </div>
-    </div>
-```  
+ 
 
 ### Licensing
 
