@@ -4,6 +4,7 @@ I hope you found this resource to be useful.  If you have any questions, comment
 of this repository.
 
 ***Happy Coding***
+
 ***--Sean Olson***
 
 
