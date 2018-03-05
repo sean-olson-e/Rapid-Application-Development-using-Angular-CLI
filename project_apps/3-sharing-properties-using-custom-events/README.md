@@ -82,7 +82,7 @@ Note the use of property and event bindings on the child component directives.
     </div>
   </div>
 ```
-### e: Finally, rework the key-manager component module
+### e: Rework the key-manager component module
 * import the Input, Output, and EventEmitter module from the @angular/core package
 * declare input and output properties
 * refactor the set- and delete-key methods to emit the custom ```keySaved``` event 
