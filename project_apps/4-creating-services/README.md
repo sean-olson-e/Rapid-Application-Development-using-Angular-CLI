@@ -1,7 +1,7 @@
 # Creating & Using Services
 One key to a successful Angular application is the intelligent use of services. At first, the name ***servies*** might sound
-complex, but they're really not.  A service is merely JavaScript class that can be used by one or components.  What goes in the 
-class s completely up to you, and determined by the needs of your application.  
+complex, but they're really not.  A service is merely JavaScript class that can be used by one or components.  What goes in a 
+class is completely up to you, determined by the needs of your application.  
 
 ## Step Four: Create a service to manage the cuisine-type options
 Currently, the cuisine-type-list is lost everytime the browser is refreshed, so we need to save the data, somewhere.  We don't have a datbase connected 
@@ -10,7 +10,7 @@ components, we'll encapsulate it within a class.
 
 ### a: Using the Angular CLI generate a new service class.
 ```
-  ng generate service cuisine-type --spec false --flat true).
+  ng generate service cuisine-type --spec false --flat true.
 ```
 
 Create a ***services*** directory under the app directory, and drag your newly created cuisine-type service into it.
