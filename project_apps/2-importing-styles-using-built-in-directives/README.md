@@ -1,13 +1,13 @@
 # Importing Styles and Using Angular's Built-In Directives
 There are many built-in directives in Angular, designed to assist with common tasks.  You can browse the. in [The Angular API](https://angular.io/api)
 
-## Commonly Used Directives
+### Commonly Used Directives
 * [ngIf](https://angular.io/api/common/NgIf) -- Conditionally includes a template based on the value of an expression.
 * [ngFor / NgForOf](https://angular.io/api/common/NgForOf) -- The NgForOf directive instantiates a template once per item from an iterable. The context for each instantiated template inherits from the outer context with the given loop variable set to the current item from the iterable.
 * [ngStyle](https://angular.io/api/common/NgStyle) --The styles are updated according to the value of the expression evaluation.
 * [ngClass](https://angular.io/api/common/NgClass) -- The CSS classes are updated as follows, depending on the type of the expression evaluation.
 
-## Step Two: Importing Global Styles and Creating more Components
+## Step Two: Import Bootstrap and Font-Awesome; Create another Component
 
 ### a: Import Bootstrap and Font Awesome Styles
 * use npm to install Bootstrap: npm install bootstrap --save 
@@ -46,7 +46,7 @@ There are many built-in directives in Angular, designed to assist with common ta
   ng generate component header --spec false
 ```
   
-* add a "title" property to the the header component module (header.component.ts)
+* add a "title" property to the the header component module (header.component.ts) and set it.
 ```
   import { Component, OnInit } from '@angular/core';
   
@@ -94,6 +94,8 @@ There are many built-in directives in Angular, designed to assist with common ta
  
 
 ### Licensing
+
+Copyright 2018 Esri
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 

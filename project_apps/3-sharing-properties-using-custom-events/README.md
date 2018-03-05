@@ -1,14 +1,126 @@
-# Sharing Component Properties and Creating Custom Events
-In this section we'll be digging a little deeper in Decorators and Event Emitters used to raise events to subscribing components.  For more on these topis, check out these resources:
+# Sharing Component Properties with Inputs, Outputs and Custom Events
 
+### Read more about @Input / @Output decorators and EventEmitters
 * [@Input() decerator](https://angular.io/api/core/Input), used to share properties with child components
 * [@Output() decerator](https://angular.io/api/core/Output), used to create custom events
 * [Event Emitter](https://angular.io/api/core/EventEmitter), used to raise custom events
 
-### Model the proerty sharing / event model between the dashboard and the key-manager
-* revert from two way binding to one-way binding on key-manager template to allow for property passing from dashboard component
+## Step Three: Create a dashboard component that nests the key-manager and the cuisine-type-list
+
+In this section we're going to add a little more intelligence into our UI.  We want to be able to hide the key-manager form once the user 
+has entered the key, but allow for the user to change it.  Also, we want to hide the cuisine type list if the user hasn't entered the key.  
+To create this kind of dynamic UI, we need to communicate between components, so one knows the state of the other.
+There are a few ways to accomplish this, but in this case we'll nest our key manager and cuisine-type list inside a dashboard component and use shared properties 
+and custom events to link them.  
+
+### a: Create a dashboard component
+
+```
+  ng g c dashboard --spec false
+```
+
+### b: Rework the component templates.
+Nest the dashboard in the app module template,
+
+```
+  <app-header></app-header>
+  <app-dashboard></app-dashboard>
+``` 
+
+and the key-manager and the cuisine-type-list under the dashboard.
+```
+  <app-key-manager [apiKey]="apiKey" (keySaved)="updateKey()"></app-key-manager>
+  <app-cuisine-type-list *ngIf="apiKey"></app-cuisine-type-list>
+```
+
+Note the use of property and event bindings on the child component directives.
+
+### c: Wire up the dashboard component module to manage the storage of the api key
+
+```
+  import { Component, OnInit } from '@angular/core';
+  
+  @Component({
+    selector: 'app-dashboard',
+    templateUrl: './dashboard.component.html',
+    styleUrls: ['./dashboard.component.css']
+  })
+  export class DashboardComponent implements OnInit {
+    apiKey;
+    getApiKey = () => {
+      this.apiKey = window.localStorage.getItem('apiKey');
+    }
+    updateKey = () => {
+      this.getApiKey();
+    }
+    constructor() { }
+    ngOnInit() {
+      this.getApiKey();
+    }
+  }
+``` 
+
+### d: Rework the key-manager template, switching from two-way binding to one-way binding
+```
+  <div class="container">
+    <div class="row" *ngIf="apiKey">
+      <div class="col-12">
+          <button type="submit" class="btn btn-warning float-right" (click)='deleteApiKey($event)'>Reset your Yelp API Key</button>
+      </div>
+    </div>
+    <div class="row" *ngIf="!apiKey">
+      <form class="col-12">
+        <div class="form-group">
+          <h5>Please enter your Yelp API Key</h5>
+          <p>Don't have one?  No problem.  Get a free Yelp API key <a href="https://www.yelp.com/developers/v3/manage_app" target="_blank">here.</a></p>
+          <input type="password" class="form-control col-12" name="api-key" id="api-key" [value]="apiKey" (input)="changeKey($event)" />
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary" (click)='setApiKey($event)'>Save Key</button>
+        </div>
+      </form>
+    </div>
+  </div>
+```
+### e: Finally, rework the key-manager component module
+* import the Input, Output, and EventEmitter module from the @angular/core package
+* declare input and output properties
+* refactor the set- and delete-key methods to emit the custom ```keySaved``` event 
+
+```
+  import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+  
+  @Component({
+    selector: 'app-key-manager',
+    templateUrl: './key-manager.component.html',
+    styleUrls: ['./key-manager.component.css']
+  })
+  export class KeyManagerComponent implements OnInit {
+    label = 'Your Yelp Api Key';
+    @Input() apiKey;
+    @Output() keySaved = new EventEmitter();
+    changedKey;
+    changeKey = (ev) => {
+      this.changedKey = ev.target.value;
+    }
+    setApiKey = (ev) => {
+      window.localStorage.setItem('apiKey', this.changedKey);
+      this.keySaved.emit();
+    }
+    deleteApiKey = () => {
+      window.localStorage.removeItem('apiKey');
+      this.keySaved.emit();
+    }
+    constructor() { }
+    ngOnInit() {
+    }
+  }
+``` 
+
 
 ### Licensing
+
+Copyright 2018 Esri
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
