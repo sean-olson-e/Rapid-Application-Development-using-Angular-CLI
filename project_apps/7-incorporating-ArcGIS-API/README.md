@@ -24,7 +24,7 @@ In your terminal, run
 #### b: Include the ArcGIS TypeScript typings in the `tsconfig.app.json` file.  Set `"types": ["arcgis-js-api"]`. 
 
 
-#### c: Implement the Map Visualization, using the Yelp Service(see code snippets).
+#### c: Implement the Map Visualization, using the Yelp Service([see code snippets]((https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/7-incorporating-ArcGIS-API/src/snippets))).
 
 
 
