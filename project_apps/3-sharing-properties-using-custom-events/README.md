@@ -13,6 +13,11 @@ To create this kind of dynamic UI, we need to communicate between components, so
 There are a few ways to accomplish this, but in this case we'll nest our key manager and cuisine-type list inside a dashboard component and use shared properties 
 and custom events to link them.  
 
+### Step Three Resources:
+* [Code Snippets](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/3-sharing-properties-using-custom-events/src/snippets)
+* [Completed Code](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/4-creating-services/src/app)
+
+
 ### a: Create a dashboard component
 
 ```
