@@ -1,11 +1,15 @@
-# Title
+# Finished APP
 
+If you have any questions, comments or issues with this self-teaching guide, please log them in the issues section 
+of this repository.
 
-## Project Step #x: Description
+***Happy Coding***
 
 
 
 ### Licensing
+
+Copyright 2018 Esri
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 

@@ -5,12 +5,16 @@ Citing from the [Angular documentation](https://angular.io/guide/http), 2/19/201
 
 >The HttpClient in @angular/common/http offers a simplified client HTTP API for Angular applications that rests on the XMLHttpRequest interface exposed by browsers. Additional benefits of HttpClient include testability features, typed request and response objects, request and response interception, Observable apis, and streamlined error handling.
 
-## Project Step #6: Bring Http Connectivity to your app
+## Step Six: Include Http Connectivity
 
-### **NOTE:** Because Yelp does not allow access for cross-origin resource sharing (CORS), we are unable to query the api directly from the browser.  To provide support for this demonstration app, a yelp-proxy service is provided.  You will find it in the root of this repository.  Lauching the service is easy:
+### Step Six Resources:
+* [Code Snippets](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/6-using-http-connections/src/snippets)
+* [Completed Code](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/7-incorporating-ArcGIS-API/src/app)
+
+#### **NOTE:** Because Yelp does not allow access for cross-origin resource sharing (CORS), we are unable to query the api directly from the browser.  To provide support for this demonstration app, a yelp-proxy service is provided.  You will find it in the root of this repository.  Lauching the service is easy:
 1. Open a console inside the yelp-proxy folder
-2. Install the node modules: ```**npm install**```
-3. Launch the server: ```**npm start**```
+2. Install the node modules: **```npm install```**
+3. Launch the server: **```npm start```**
 
 
 ### a: Create new components for the search panel
@@ -33,7 +37,7 @@ Citing from the [Angular documentation](https://angular.io/guide/http), 2/19/201
 ```
 
 ### c: Bring RxJS into the app
-* From the console install the RxJS module: ```**npm i rxjs --save**```
+* From the console install the RxJS module: **```npm i rxjs --save```**
 
 ### d: Wire up the YelpService
 1. Import the HttpClient module and the RxJS module into the YelpService module.
@@ -93,6 +97,8 @@ import { Subject } from 'rxjs/Subject';
 
 
 ### Licensing
+
+Copyright 2018 Esri
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
