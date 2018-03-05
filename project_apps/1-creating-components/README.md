@@ -17,17 +17,17 @@ purposes of this app we'll use the browser's localStorage API.  So begin by crea
 * [Code Snippets](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/1-creating-components/src/snippets/key-manager)
 * [Completed Code](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/2-importing-styles-using-built-in-directives/src/app)
 
-### a: Creating a Key-Manager Component
+### a: Create the Key-Manager Component
  Using 
 the Angular CLI from the root of the application run  
 
-```ng generate component key-manager --spec false)```
+```ng generate component key-manager --spec false```
 
 By default, the Angular CLI will stub out a test module for the component. To simplify things here, we eliminate this by adding the ```--spec false``` flag to the generator command.
 
 #### Anatomy of an Angular Component
 The CLI generates three key files that make up the functional component:
-* key-manager.component.ts: the component (TypeScript) code module
+* key-manager.component.ts: the component code module
 * key-manager.component.html: the component html template
 * key-manager.component.css: the component-scoped css file
 
@@ -66,7 +66,7 @@ export class KeyManagerComponent implements OnInit {
 
 One-way binding in forms follows a simple pattern: 
 * form input properties use bracket syntax, ```[value]="property_name"``` 
-* form input events use parenthesis, ```(input)="handler($event)"
+* form input events use parenthesis, ```(input)="handler($event)"```
 * non-form elements use double-brace string interpolation, ```{{property_name}}```  
 
 
