@@ -8,6 +8,12 @@ Currently, the cuisine-type-list is lost everytime the browser is refreshed, so 
 to our app, so we'll mock one up using the localStorage API of the browser, just as we did for the key-manager.  To support the use of this data across 
 components, we'll encapsulate it within a class. 
 
+### Step Four Resources:
+* [Code Snippets](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/4-creating-services/src/snippets)
+* [Completed Code](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/5-configuring-routes/src/app)
+
+
+
 ### a: Using the Angular CLI generate a new service class.
 ```
   ng generate service cuisine-type --spec false --flat true.
