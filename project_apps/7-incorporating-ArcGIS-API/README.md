@@ -27,6 +27,9 @@ In your terminal, run
 #### c: Implement the Map Visualization, using the Yelp Service -- [see code snippets](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/7-incorporating-ArcGIS-API/src/snippets).
 
 
+### Other Resources
+
+For a deeper dive, checkout the companion repository to this one [Angular and the ArcGIS API](https://github.com/sean-olson-e/Angular-and-the-ArcGIS-API-for-JavaScript)
 
 ### Licensing
 
