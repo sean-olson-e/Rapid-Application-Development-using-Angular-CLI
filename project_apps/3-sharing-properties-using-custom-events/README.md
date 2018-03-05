@@ -33,7 +33,8 @@ and the key-manager and the cuisine-type-list under the dashboard.
   <app-cuisine-type-list *ngIf="apiKey"></app-cuisine-type-list>
 ```
 
-Note the use of property and event bindings on the child component directives.
+Note the use of property and event bindings on the child-component directives. ```(keySaved)="updateKey()`` is a custom event binding
+that allows the key-manager component to signal the dashboard that the key has changed and needs to be saved.
 
 ### c: Wire up the dashboard component module to manage the storage of the api key
 
