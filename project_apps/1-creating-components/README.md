@@ -121,7 +121,6 @@ export class KeyManagerComponent implements OnInit {
 * but two-way binding requires FormModule be imported into the ```app.module.ts```.
 
 **app.module.ts**
-
 ```
 ...
 
