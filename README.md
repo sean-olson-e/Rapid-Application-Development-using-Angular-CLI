@@ -2,9 +2,9 @@
 This repository was developed as a self-teaching tool, first presented at the [*Esri Dev Summit 2018* presentation](https://devsummit2018.schedule.esri.com/schedule/433914485) of similar name.
 In it you will find resources  to walk you, step-by-step, through the application
 development process using Angular and the Angular CLI.  Each of the [project_apps sub-folders](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps)
-contains a version of the app at a stage in the development process.  Each sub-folder also contains a README file with step-by-step instruction, a code snippets
-folder with the completed code for that step. The goal is to provide users a hands-on experience with the essential
-technologies and development patterns of Angular (2+) development.
+contains a version of the app at a stage in the development process.  Each sub-folder also contains a README file with
+step-by-step instruction and a code snippets folder with the completed code for that step. The goal is to provide users
+a hands-on experience with the essential technologies and development patterns of Angular (2+) development.
 
 ## Repository contents
 * **[/docs](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/docs)**: presentation slides
