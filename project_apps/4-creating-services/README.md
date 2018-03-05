@@ -4,6 +4,9 @@ complex, but they're really not.  A service is merely JavaScript class that can 
 class s completely up to you, and determined by the needs of your application.  
 
 ## Step Four: Create a service to manage the cuisine-type options
+Currently, the cuisine-type-list is lost everytime the browser is refreshed, so we need to save the data, somewhere.  We don't have a datbase connected 
+to our app, so we'll mock one up using the localStorage API of the browser, just as we did for the key-manager.  To support the use of this data across 
+components, we'll encapsulate it within a class. 
 
 ### a: Using the Angular CLI generate a new service class.
 ```
@@ -32,7 +35,7 @@ Create a ***services*** directory under the app directory, and drag your newly c
 ```
 
 By adding a class to the provider list, Angular will manage creating an instance of the service class and share it with all
-the components that import it.  This process of sharing a service with components is referred to as ***Dependency Injection****[]: 
+the components that import it.  This process of sharing a service with components is referred to as ***Dependency Injection***. 
 
 ### c: Import the service into the CuisineTypeComponent class module
 
