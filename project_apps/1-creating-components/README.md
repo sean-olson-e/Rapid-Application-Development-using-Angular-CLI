@@ -33,16 +33,16 @@ The CLI generates three key files that make up the functional component:
 
 In addition to generating the component files, the CLI also registers the component with the ```app.module.ts``` file, which controls how the parts of the app fit together.
 
-#### Understanding the three parts of the component code module.
+### b: Review the three parts of the component code module.
 An Angular component code module has three basic components:
 
-1. the import section at the heading of the component, where you will load the module libraries required by the component
+**1.** an import section that loads the module libraries required by the component
 
 ```
 import { Component, OnInit } from '@angular/core';
 ```
 
-2. the component class that contains the functionality for the component
+**2.** a component class that contains the functionality for the component
 ```
 export class KeyManagerComponent implements OnInit {
   constructor() { }
@@ -52,7 +52,7 @@ export class KeyManagerComponent implements OnInit {
 }
 ``` 
 
-3. the @Component decorator that will add additional functionality to the component.  The CLI automatically add the three required properties:  the selector used to identify the directive, the URL for the component template; and the URL for the component CSS.
+**3.** a TypeScript @Component decorator that adds additional functionality to the component.
 
 ```@Component({
      selector: 'app-key-manager',
