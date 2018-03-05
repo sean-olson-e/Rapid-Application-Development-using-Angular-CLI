@@ -9,6 +9,11 @@ There are many built-in directives in Angular, designed to assist with common ta
 
 ## Step Two: Import Bootstrap and Font-Awesome; Create another Component
 
+### Step One Resources:
+* [Code Snippets](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/2-importing-styles-using-built-in-directives/src/snippets)
+* [Completed Code](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/3-sharing-properties-using-custom-events/src/app)
+
+
 ### a: Import Bootstrap and Font Awesome Styles
 * use npm to install Bootstrap: npm install bootstrap --save 
 * use npm to install Font Awesome: npm install font-awesome --save
