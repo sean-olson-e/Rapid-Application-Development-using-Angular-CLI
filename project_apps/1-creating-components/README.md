@@ -116,7 +116,9 @@ export class KeyManagerComponent implements OnInit {
  
 ### c2: Wire up the key-manager form template to use two-way property and event binding
 
-Angular provides a mechanism for two-way binding on form elements, but two-way binding requires FormModule be imported into the ```app.module.ts``` first.
+#### NOTES: Two-way binding in forms follows a simple pattern: 
+* form input properties use bracket syntax, ```[(ngModel)]="property_name"```. 
+* but two-way binding requires FormModule be imported into the ```app.module.ts```.
 
 **app.module.ts**
 
