@@ -1,6 +1,6 @@
 # Finished App
 
-I hope you found this resource to be useful.  If you have any questions, comments or issues with this self-teaching guide, please log them in the issues section 
+I hope you found this resource to be useful.  If you have any questions, comments or issues with this self-teaching guide, please raise them in the issues section 
 of this repository.
 
 ***Happy Coding***

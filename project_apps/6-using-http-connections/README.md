@@ -35,12 +35,11 @@ Citing from the [Angular documentation](https://angular.io/guide/http), 2/19/201
   ],
 
 ```
-
 ### c: Bring RxJS into the app
 * From the console install the RxJS module: **```npm i rxjs --save```**
 
 ### d: Wire up the YelpService
-1. Import the HttpClient module and the RxJS module into the YelpService module.
+**1.** Import the HttpClient module and the RxJS module into the YelpService module.
 
 ```
 import { HttpClient} from '@angular/common/http';
@@ -48,20 +47,20 @@ import { Subject } from 'rxjs/Subject';
   ...
 
 ```
-2. Create an instance of the HttpClient
+**2.** Create an instance of the HttpClient
 
 ```
   constructor(private http: HttpClient) {}
 
 ```
-3. Create an observable in the YelpService module that will notify other app components when the search results have changed
+**3.** Create an observable in the YelpService module that will notify other app components when the search results have changed
 
 ```
   updateResults = new Subject<void>();
 
 ```
 
-4. Create a public search method
+**4.** Create a public search method
 
 ```
   searchYelp = (params) => {
