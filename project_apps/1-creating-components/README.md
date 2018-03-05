@@ -62,13 +62,15 @@ export class KeyManagerComponent implements OnInit {
 
 ```      
 
-### Wiring up the key-manager form template to use one-way property and event binding
+### c1: Wire up the key-manager form template to use one-way property and event binding
 
-One-way binding in forms follows a simple pattern: 
+#### NOTES: One-way binding in forms follows a simple pattern: 
 * form input properties use bracket syntax, ```[value]="property_name"``` 
 * form input events use parenthesis, ```(input)="handler($event)"```
 * non-form elements use double-brace string interpolation, ```{{property_name}}```  
 
+
+***Component Template***
 
 ```
  <div>
@@ -77,27 +79,100 @@ One-way binding in forms follows a simple pattern:
    <button (click)='setApiKey($event)'>Save Key</button>
  </div>
 ```
+
+***Component Module***
+```
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-key-manager',
+  templateUrl: './key-manager.component.html',
+  styleUrls: ['./key-manager.component.css']
+})
+export class KeyManagerComponent implements OnInit {
+
+  label = 'Yelp Api Key';
+  apiKey;
+
+  /*
+    The use of separate property and event binding require an event handler to assign
+    the updated values to the property. This can be eliminated with two-way binding.
+  */
+  updateValue = (ev) => {
+    this.apiKey = ev.target.value;
+  }
+
+  setApiKey = (ev) => {
+    window.localStorage.setItem('apiKey', this.apiKey);
+  }
+
+  constructor() { }
+
+  ngOnInit() {
+    this.apiKey = window.localStorage.getItem('apiKey');
+  }
+}
+```
  
-### Wiring up the key-manager form template to use two-way property and event binding
+### c2: Wire up the key-manager form template to use two-way property and event binding
 
 Angular provides a mechanism for two-way binding on form elements, but two-way binding requires FormModule be imported into the ```app.module.ts``` first.
+
+**app.module.ts**
 
 ```
 ...
 
-import { FormsModule } from '@angular/forms';
-
-...
-
-@NgModule({
+  import { FormsModule } from '@angular/forms';
   ...
-  imports: [
-    FormsModule
-  ],
-  ...
-})
-export class AppModule { }
-```  
+  @NgModule({
+    ...
+    imports: [
+      FormsModule
+    ],
+    ...
+  })
+  export class AppModule { }
+``` 
+
+**Component Template**
+```
+  <div>
+    <label for="api-key">{{label}}: </label>
+    <input type="password" name="api-key" id="api-key" [(ngModel)]="apiKey">
+    <button (click)='setApiKey($event)'>Save Key</button>
+  </div>
+```
+
+**Component Module**
+```
+  import { Component, OnInit } from '@angular/core';
+  
+  @Component({
+    selector: 'app-key-manager',
+    templateUrl: './key-manager.component.html',
+    styleUrls: ['./key-manager.component.css']
+  })
+  export class KeyManagerComponent implements OnInit {
+  
+    label = 'Yelp Api Key';
+    apiKey;
+  
+    setApiKey = (ev) => {
+      window.localStorage.setItem('apiKey', this.apiKey);
+    }
+  
+    constructor() { }
+  
+    ngOnInit() {
+      this.apiKey = window.localStorage.getItem('apiKey');
+    }
+  }
+```
+
+
+
+ 
 
 
 With the FormsModule imported into the app, you can implement two-way binding with combined bracket-parenthesis syntax, ```[(ngModel)]="property_name"```

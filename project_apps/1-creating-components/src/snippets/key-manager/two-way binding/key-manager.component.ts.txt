@@ -19,5 +19,4 @@ export class KeyManagerComponent implements OnInit {
   ngOnInit() {
     this.apiKey = window.localStorage.getItem('apiKey');
   }
-
 }
