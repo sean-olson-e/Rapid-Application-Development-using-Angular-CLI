@@ -29,7 +29,7 @@ In your terminal, run
 
 ### Other Resources
 
-For a deeper dive, checkout the companion repository to this one [Angular and the ArcGIS API](https://github.com/sean-olson-e/Angular-and-the-ArcGIS-API-for-JavaScript)
+For a deeper dive into working with the ArcGIS API for JavaScript, checkout the companion repository to this one [Angular and the ArcGIS API](https://github.com/sean-olson-e/Angular-and-the-ArcGIS-API-for-JavaScript)
 
 ### Licensing
 
