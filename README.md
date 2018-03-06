@@ -7,7 +7,7 @@ step-by-step instruction and a code snippets folder with the completed code for 
 a hands-on experience with the essential technologies and development patterns of Angular (2+) development.
 
 
-## The App
+#### The app we're going to build
 
 ![the app](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/blob/master/resources/img/app_screen_shot.jpg)
 
