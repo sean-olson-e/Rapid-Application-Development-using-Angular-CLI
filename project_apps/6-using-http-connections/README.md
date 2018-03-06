@@ -35,10 +35,8 @@ Citing from the [Angular documentation](https://angular.io/guide/http), 2/19/201
   ],
 
 ```
-### c: Bring RxJS into the app
-* From the console install the RxJS module: **```npm i rxjs --save```**
 
-### d: Wire up the YelpService
+### c: Wire up the YelpService
 **1.** Import the HttpClient module and the RxJS module into the YelpService module.
 
 ```

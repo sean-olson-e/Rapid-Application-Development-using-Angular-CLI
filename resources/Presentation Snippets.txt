@@ -1,9 +1,0 @@
-presentation snippets
-
-CONSOLE TRANSITION 1: ng new my-app --skip-install --directory my-directory
-
-CONSOLE TRANSITION 2: ng serve
-
-CONSOLE TRANSITION 3: ng generate component key-manager –-spec false
-
-

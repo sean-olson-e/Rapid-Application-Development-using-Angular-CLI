@@ -6,6 +6,11 @@ contains a version of the app at a stage in the development process.  Each sub-f
 step-by-step instruction and a code snippets folder with the completed code for that step. The goal is to provide users
 a hands-on experience with the essential technologies and development patterns of Angular (2+) development.
 
+
+## The App
+
+![the app](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/blob/master/resources/img/app_screen_shot.jpg)
+
 ## Repository contents
 * **[/project_apps](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps)**: demonstration app broken down into development steps. Each of the project_apps directories is accompanied by a README file that will walk you through the given implementation.  Within each of the projects_apps code bases, you will find the code for the sample in the ```src/snippets``` folder.
 * **[/resources](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/resources)**: miscellaneous resource documents

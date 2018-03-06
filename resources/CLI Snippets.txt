@@ -1,0 +1,11 @@
+CLI snippets
+
+ng new my-app --dry-run true --skip-install true
+
+ng new my-app --skip-install --directory my-directory
+
+ng serve
+
+ng generate component key-manager –-spec false
+
+

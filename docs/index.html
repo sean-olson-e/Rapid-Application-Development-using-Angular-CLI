@@ -63,7 +63,6 @@
 				<p >Get the code samples, slides and resources from this presentation:</p>
 				<p style="text-decoration: underline">github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI</p>
 			</section>
-
 			<section data-markdown data-background="img/bg-2.png">
 				<textarea data-template>
 					### Primary audience for this presentation
@@ -73,12 +72,36 @@
 					-	have no JavaScript framework experience.
 					-	have experience with JavaScript frameworks other than Angular.
 					-	work with Angular.js (Angular 1), but have not made the leap to Angular (Angular 2+).
-					- 	are just interested in tech and want to learne more.
+					- 	are just interested in tech and want to learn more.
 
 				</textarea>
 			</section>
+			<section data-markdown data-background="img/bg-2.png">
+				<textarea data-template>
+					## What do we want to accomplish here?
+
+					#### Demonstrate development techniques and design patterns for app development using Angular CLI?
+
+					Yes, but that's not the key take away....
+
+				</textarea>
+			</section>
+			<section data-markdown data-background="img/bg-2.png">
+				<textarea data-template>
+					## So, what is the key takeaway?
+
+					Familiarize yourself with the self-teaching resource in this repository.  It waill provide step-by-step
+					instuctions, code samples and other resources to build a cool little app.
+
+					[sean-olson-e/Rapid-Application-Development-using-Angular-CLI](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI)
+
+				</textarea>
+			</section>
+
 			<section data-markdown data-background="img/bg-6.png">
 				<textarea data-template>
+
+					### About Angular, briefly
 					![Angular](img/angular.png)
 
 					Angular is a TypeScript-based open-source front-end web application platform led by the Angular Team at Google and by a community of individuals and corporations. Angular is a complete rewrite from the same team that built AngularJS.
@@ -90,6 +113,7 @@
 			</section>
 			<section data-markdown data-background="img/bg-6.png">
 				<textarea data-template>
+					### About TypeScript, briefly
 					![TypeScript](img/typescript.png)
 
 					TypeScript is a language for application-scale JavaScript. TypeScript adds optional types, classes, and modules to JavaScript. TypeScript supports tools for large-scale JavaScript applications for any browser, for any host, on any OS. TypeScript compiles to readable, standards-based JavaScript.
@@ -102,9 +126,11 @@
 			</section>
 			<section data-markdown data-background="img/bg-3.png">
 				<textarea data-template>
-					## The Angular CLI
+					### About the Angular CLI, yes, briefly
 
-					*  It eliminates the cumbersome task of creating a custom build script.
+					*  It makes it easy to create an application that already works, right out of the box.
+					*  It generates components, routes, services and pipes with a simple command.
+					*  It eliminates the time consuming task of creating a custom build script.
 					*  It provides a standard application architecture that supports team development.
 					*  It facilitates rapid development with generator commands for components, services, directives and more.
 
@@ -123,7 +149,7 @@
 			</section>
 			<section data-markdown data-background="img/bg-2.png" data-state="into-css">
 				<textarea data-template>
-					### A Few Basic CLI Commands
+					### A few basic CLI commands
 					* ```ng new <application-name> [options]```
 					* ```ng generate <type> [options]```
 					* ```ng serve [options]```
@@ -134,23 +160,24 @@
 			</section>
 			<section data-markdown data-background="img/bg-2.png" data-state="into-css">
 				<textarea data-template>
-					## Let's Build an App!
+					## Generating a new app
+
+					from your terminal, run
 					```
-						# from your terminal, run
-						ng new my-app --skip-install --directory my-directory
+						ng new <my-app> [options]
 					```
+					It's that easy.
 				</textarea>
 			</section>
 			<section data-markdown data-background="img/bg-3.png">
 				<textarea data-template>
-					## Exploring the Application Structure
+					## Exploring the application structure
 
 					Too much to show in a slide.
 
 					Let's checkout the project app [0-app-scaffolding](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/0-app-scaffolding).
 				</textarea>
 			</section>
-
 			<section data-markdown data-background="img/bg-3.png">
 				<textarea data-template>
 					![asynchronous operations](img/bootstrap_sequence.png)
@@ -158,7 +185,7 @@
 			</section>
 			<section data-markdown data-background="img/bg-3.png">
 				<textarea data-template>
-					## Serving an Angular App
+					## Serving an Angular app
 					- To launch any of the Angular project apps a browser
 					```
 						# navigate the root of any app directory and run
@@ -170,9 +197,11 @@
 					- Open a browser and navigate to localhost:4200
 				</textarea>
 			</section>
-			<section data-markdown data-background="img/bg-6.png">
+			<section data-markdown data-background="img/bg-9.png" data-state="into-css">
 				<textarea data-template>
-					![app_screenshot](img/app_screenshot.png)
+					So, let's get started with our app!
+
+					## Step one: create a component
 				</textarea>
 			</section>
 			<section data-markdown data-background="img/bg-5.png" data-state="blockquote-smaller">
@@ -185,22 +214,24 @@
 					![step one](img/step_one_component.png)
 				</textarea>
 			</section>
-			<section data-markdown data-background="img/bg-5.png">
+			<section data-markdown data-background="img/bg-6.png">
 				<textarea data-template>
 					## Components
-					- Let's create an Angular component using the CLI
+
+					* Clone the repository to your machine
+					* Open a terminal window and navigate to ```project_apps/1-creating-components```
+					* Run
 
 					```
-						#navigate into the root of project_apps/1-creating-components and run
 						ng generate component key-manager --spec false
 
 					```
 				</textarea>
 			</section>
-			<section data-markdown data-background="img/bg-6.png">
+			<section data-markdown data-background="img/bg-5.png">
 				<textarea data-template>
-					## What Gets Generated?
-					- A really simple HTML template -- really simple
+					## What gets generated?
+					A simple HTML template, really simple
 
 					```
 					<p>
@@ -212,8 +243,8 @@
 			</section>
 			<section data-markdown data-background="img/bg-6.png">
 				<textarea data-template>
-					## What Else Gets Generated?
-					- The Component Module
+					## What else gets generated?
+					The component class module.
 
 					```
 						import { Component, OnInit } from '@angular/core';
@@ -235,10 +266,15 @@
 					```
 				</textarea>
 			</section>
+			<section data-markdown data-background="img/bg-7.png">
+				<textarea data-template>
+					![app screenshot](img/component_anatomy.png)
+				</textarea>
+			</section>
 			<section data-markdown data-background="img/bg-5.png">
 				<textarea data-template>
 					## Does the generator do anything else?
-					- Yes.  In addition to generating css and test modules, it registers the component with the ```app.module.ts``` file.
+					Why yes.  The CLI generator also create a module css file, a test module if you choose, and it registers the component with the ```app.module.ts``` file.
 
 					```
 					import { BrowserModule } from '@angular/platform-browser';
@@ -256,6 +292,8 @@
 					export class AppModule { }
 
 					```
+
+					 It dos a lot with a single command.
 				</textarea>
 			</section>
 			<section data-markdown data-background="img/bg-6.png">
@@ -271,12 +309,7 @@
 					```
 				</textarea>
 			</section>
-			<section data-markdown data-background="img/bg-7.png">
-				<textarea data-template>
-					![app screenshot](img/component_anatomy.png)
-				</textarea>
-			</section>
-			<section data-markdown data-background="img/bg-5.png" data-state="blockquote-smaller">
+			<section data-markdown data-background="img/bg-6.png" data-state="blockquote-smaller">
 				<textarea data-template>
 					## One-Way Form Binding & String Interpolation
 
@@ -310,14 +343,14 @@
 
 				</textarea>
 			</section>
-			<section data-markdown data-background="img/bg-5.png" data-state="blockquote-smaller">
+			<section data-markdown data-background="img/bg-9.png" data-state="into-css">
 				<textarea data-template>
-					## Review the Completed Code
+					Let's keep going!
 
-					-  View the [completed code](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/1-creating-components/src/snippets/key-manager) in the repository
+					## Step two: add global styles, implement built-in directives, and create more components.
 				</textarea>
 			</section>
-			<section data-markdown data-background="img/bg-5.png" data-state="blockquote-smaller">
+			<section data-markdown data-background="img/bg-6.png" data-state="blockquote-smaller">
 				<textarea data-template>
 					![step two complete](img/step2_complete.png)
 				</textarea>
@@ -327,7 +360,19 @@
 					![step two](img/step_two_components.png)
 				</textarea>
 			</section>
-			<section data-markdown data-background="img/bg-5.png" data-state="blockquote-smaller">
+			<section data-markdown data-background="img/bg-8.png" data-state="blockquote-smaller">
+				<textarea>
+					## Checkout the [step 2 guide](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/2-importing-styles-using-built-in-directives)
+				</textarea>
+			</section>
+			<section data-markdown data-background="img/bg-9.png" data-state="into-css">
+				<textarea data-template>
+					Alright, now let's make the UI a little more dynamic...
+
+					## Step three: sharing properties among components using Inputs, Outputs and Event Emitters
+				</textarea>
+			</section>
+			<section data-markdown data-background="img/bg-6.png" data-state="blockquote-smaller">
 				<textarea data-template>
 					![step three complete](img/step3_complete.png)
 				</textarea>
@@ -337,14 +382,38 @@
 					![step three](img/step_three_components.png)
 				</textarea>
 			</section>
-			<section data-markdown data-background="img/bg-5.png" data-state="blockquote-smaller">
+			<section data-markdown data-background="img/bg-8.png" data-state="blockquote-smaller">
+				<textarea>
+					## Checkout the [step 3 guide](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/3-sharing-properties-using-custom-events)
+				</textarea>
+			</section>
+			<section data-markdown data-background="img/bg-9.png" data-state="into-css">
 				<textarea data-template>
-					![step tfour complete](img/step4_complete.png)
+					Now that we have an editor, let's persist the data
+
+					## Step four: creating and injecting services
 				</textarea>
 			</section>
 			<section data-markdown data-background="img/bg-5.png" data-state="blockquote-smaller">
 				<textarea data-template>
+					![step four complete](img/step4_complete.png)
+				</textarea>
+			</section>
+			<section data-markdown data-background="img/bg-6.png" data-state="blockquote-smaller">
+				<textarea data-template>
 					![step four](img/step_four_components.png)
+				</textarea>
+			</section>
+			<section data-markdown data-background="img/bg-8.png" data-state="blockquote-smaller">
+				<textarea>
+					## Checkout the [step 4 guide](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/4-creating-services)
+				</textarea>
+			</section>
+			<section data-markdown data-background="img/bg-9.png" data-state="into-css">
+				<textarea data-template>
+
+					The app is about to get much more involved, and we need to dynamically manage views
+					## Step five: configuring routes
 				</textarea>
 			</section>
 			<section data-markdown data-background="img/bg-5.png" data-state="blockquote-smaller">
@@ -352,9 +421,21 @@
 					![step five complete](img/step5_complete.png)
 				</textarea>
 			</section>
-			<section data-markdown data-background="img/bg-5.png" data-state="blockquote-smaller">
+			<section data-markdown data-background="img/bg-6.png" data-state="blockquote-smaller">
 				<textarea data-template>
 					![step five](img/step_five_components.png)
+				</textarea>
+			</section>
+			<section data-markdown data-background="img/bg-8.png" data-state="blockquote-smaller">
+				<textarea>
+					## Checkout the [step 5 guide](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/5-configuring-routes)
+				</textarea>
+			</section>
+			<section data-markdown data-background="img/bg-9.png" data-state="into-css">
+				<textarea data-template>
+
+					We have a functional shell.  Now it's time to bring in some data.
+					## Step six: using http to consume API services
 				</textarea>
 			</section>
 			<section data-markdown data-background="img/bg-5.png" data-state="blockquote-smaller">
@@ -362,12 +443,45 @@
 					![step six complete](img/step6_complete.png)
 				</textarea>
 			</section>
+			<section data-markdown data-background="img/bg-6.png" data-state="blockquote-smaller">
+				<textarea data-template>
+					![step six](img/step_six_components.png)
+				</textarea>
+			</section>
+			<section data-markdown data-background="img/bg-8.png" data-state="blockquote-smaller">
+				<textarea>
+					## Checkout the [step 6 guide](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/6-using-http-connections)
+				</textarea>
+			</section>
+			<section data-markdown data-background="img/bg-9.png" data-state="into-css">
+				<textarea data-template>
+
+					Good, we have data.  Now let's add a map to plot the restaurant locations
+					## Step seven: include a map with the ArcGIS API for JsavaScript
+				</textarea>
+			</section>
 			<section data-markdown data-background="img/bg-5.png" data-state="blockquote-smaller">
 				<textarea data-template>
 					![step seven complete](img/step7_complete.png)
 				</textarea>
 			</section>
-			<section data-markdown data-background="img/bg-5.png">
+			<section data-markdown data-background="img/bg-6.png" data-state="blockquote-smaller">
+				<textarea data-template>
+					![step seven](img/step_seven_components.png)
+				</textarea>
+			</section>
+			<section data-markdown data-background="img/bg-8.png" data-state="blockquote-smaller">
+				<textarea>
+					## Checkout the [step 7 guide](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/7-incorporating-ArcGIS-API)
+				</textarea>
+			</section>
+			<section data-markdown data-background="img/bg-9.png" data-state="into-css">
+				<textarea data-template>
+					## That's it!
+				</textarea>
+			</section>
+
+			<section data-markdown data-background="img/bg-6.png">
 				<textarea data-template>
 					## Where to get help: Angular
 
