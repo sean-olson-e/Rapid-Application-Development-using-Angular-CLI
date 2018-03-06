@@ -15,8 +15,14 @@ There are many built-in directives in Angular, designed to assist with common ta
 
 
 ### a: Import Bootstrap and Font Awesome Styles
-* use npm to install Bootstrap: npm install bootstrap --save 
-* use npm to install Font Awesome: npm install font-awesome --save
+* use npm to install Bootstrap: 
+```
+  npm install bootstrap --save
+``` 
+* use npm to install Font Awesome: 
+```
+  npm install font-awesome --save
+```
 * import the Bootstrap and Font Awesome css files through the styles property in the .angular-cli.json file
 
 
@@ -76,15 +82,6 @@ There are many built-in directives in Angular, designed to assist with common ta
 </div>
 ```
 
-* add the header tag to the top of the app component template (app.component.html)
-
-```
-<app-header></app-header>
-<app-key-manager></app-key-manager>
-<app-cuisine-type-list></app-cuisine-type-list>
-```
-
-
 ### d: Create a cuisine type list component
 * from the terminal create a cuisine-type-list component,
  ```
@@ -93,10 +90,16 @@ There are many built-in directives in Angular, designed to assist with common ta
   
 * copy the code from [the snippets file](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/blob/master/project_apps/2-importing-styles-using-built-in-directives/src/snippets/cuisine-type-list.component.ts.txt) into the cuisine-type-list 
 
-
 * copy markup from [the snippets file](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/blob/master/project_apps/2-importing-styles-using-built-in-directives/src/snippets/cuisine-type-list.component.html.txt) into the cuisine-type-list template
 
+### e: Add the header and cuisine-type-list component templates to the app component template(app.component.html)
  
+ ```
+ <app-header></app-header>
+ <app-key-manager></app-key-manager>
+ <app-cuisine-type-list></app-cuisine-type-list>
+ ```
+
 
 ### Licensing
 
