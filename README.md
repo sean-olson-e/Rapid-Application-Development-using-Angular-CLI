@@ -7,10 +7,10 @@ step-by-step instruction and a code snippets folder with the completed code for 
 a hands-on experience with the essential technologies and development patterns of Angular (2+) development.
 
 ## Repository contents
-* **[/docs](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/docs)**: presentation slides
 * **[/project_apps](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps)**: demonstration app broken down into development steps. Each of the project_apps directories is accompanied by a README file that will walk you through the given implementation.  Within each of the projects_apps code bases, you will find the code for the sample in the ```src/snippets``` folder.
 * **[/resources](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/resources)**: miscellaneous resource documents
 * **[/yelp_proxy](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/yelp_proxy)**: a simple node proxy used to communicate with the Yelp API
+* **[Launch Presentation SLides](https://sean-olson-e.github.io/Rapid-Application-Development-using-Angular-CLI/#/)**
 
 ## Getting started
 
