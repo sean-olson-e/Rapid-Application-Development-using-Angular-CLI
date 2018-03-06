@@ -7,6 +7,6 @@ ng serve
 
 ng serve --port 8080
 
-ng generate component key-manager –-spec false
+ng generate component key-manager --spec false
 
 
