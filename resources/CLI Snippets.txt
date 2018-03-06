@@ -1,10 +1,11 @@
 CLI snippets
 
-ng new my-app --dry-run true --skip-install true
 
-ng new my-app --skip-install --directory my-directory
+ng new my-app --skip-install true --directory my-directory
 
-ng serve
+ng serve 
+
+ng serve --port 8080
 
 ng generate component key-manager –-spec false
 
