@@ -8,6 +8,11 @@ It's time to integrate the [ArcGIS API for JavaScript](https://developers.arcgis
 * [Code Snippets](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/7-incorporating-ArcGIS-API/src/snippets)
 * [Completed Code](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/8-finished-app/src/app)
 
+### Finished View:
+![step seven](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/blob/master/docs/img/step7_complete.png)
+
+## Instructions:
+
 #### a: Install Dependencies
 Currently (as of 3/5/2018), we need to install two dependencies to use the ArcGIS API for JavaScript within an 
 Angular application: the [`esri-loader`](https://github.com/Esri/esri-loader#usage), a low level service 

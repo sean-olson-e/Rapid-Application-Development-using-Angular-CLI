@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class YelpService {
-  getApiKey = () => {
+  getApiKey ()  {
     return window.localStorage.getItem('apiKey') || '';
   }
-  saveApiKey = (key: string) => {
+  saveApiKey(key: string) {
     window.localStorage.setItem('apiKey', key);
   }
-  deleteApiKey = () => {
+  deleteApiKey ()  {
     window.localStorage.removeItem('apiKey');
   }
   constructor() {}

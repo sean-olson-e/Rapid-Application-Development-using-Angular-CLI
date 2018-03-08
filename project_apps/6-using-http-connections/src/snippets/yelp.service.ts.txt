@@ -9,26 +9,26 @@ export class YelpService {
   updateResults = new Subject<void>();
   selectedRestaurant = new Subject<void>();
 
-  getApiKey = () => {
+  getApiKey ()  {
     return window.localStorage.getItem('apiKey') || '';
   }
-  saveApiKey = (key: string) => {
+  saveApiKey (key: string) {
     window.localStorage.setItem('apiKey', key);
   }
-  deleteApiKey = () => {
+  deleteApiKey ()  {
     window.localStorage.removeItem('apiKey');
   }
 
-  getSearchResults = () => {
+  getSearchResults ()  {
     return this.searchResults;
   }
 
-  clearSearchResults = () => {
+  clearSearchResults ()  {
     this.searchResults = [];
     this.updateResults.next();
   }
 
-  searchYelp = (params) => {
+  searchYelp (params) {
     const url =  'http://localhost:3000/yelp?apikey=' + this.getApiKey() + '&categories=' + params.type + '&location=' + params.location;
 
     return new Promise((resolve, reject) => {
@@ -58,10 +58,10 @@ export class YelpService {
     });
   }
 
-  loadRestaurant = (id) => {
+  loadRestaurant(id) {
     this.selectedRestaurant.next(id);
   }
-  getRestaurant = (id) => {
+  getRestaurant(id) {
     return(id);
   }
 

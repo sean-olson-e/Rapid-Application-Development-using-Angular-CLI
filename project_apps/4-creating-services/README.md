@@ -89,7 +89,7 @@ the components that import it.  This process of sharing a service with component
   
     cuisineTypes: string[];
   
-    getCuisineTypes = () => {
+    getCuisineTypes ()  {
       return this.cuisineTypes;
     }
   
@@ -115,11 +115,11 @@ the components that import it.  This process of sharing a service with component
       this.saveCuisineTypes();
     }
   
-    private saveCuisineTypes = () => {
+    private saveCuisineTypes ()  {
       window.localStorage.setItem('cuisineTypes', JSON.stringify(this.cuisineTypes));
     }
   
-    private sortTypes = () => {
+    private sortTypes ()  {
       this.cuisineTypes.sort((a: string, b: string) => {
         return a < b ? -1 : 1;
       });

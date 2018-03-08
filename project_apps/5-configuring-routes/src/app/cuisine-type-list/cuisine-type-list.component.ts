@@ -23,33 +23,33 @@ export class CuisineTypeListComponent implements OnInit {
     fresh: ''
   };
 
-  saveNewType = () => {
+  saveNewType ()  {
     this.ctService.addNewType(this.newType.type);
     this.cancelNewType();
   }
-  saveEditedType = () => {
+  saveEditedType ()  {
     this.ctService.editType(this.editedType.stale, this.editedType.fresh);
     this.cancelEditType();
   }
-  deleteType = (ix) => {
+  deleteType(ix) {
     if (this.editedType.editing) {
       this.cancelEditType();
     }
     this.ctService.deleteType(ix);
   }
-  addNewType = () => {
+  addNewType ()  {
     if (this.editedType.editing) {
       this.cancelEditType();
     }
     this.newType.adding = true;
   }
 
-  cancelNewType = () => {
+  cancelNewType ()  {
     this.newType.adding = false;
     this.newType.type = '';
   }
 
-  editType = (ix) => {
+  editType(ix) {
     if (this.newType.adding) {
       this.cancelNewType();
     }
@@ -59,7 +59,7 @@ export class CuisineTypeListComponent implements OnInit {
     this.editedType.fresh = this.editedType.stale;
   }
 
-  cancelEditType = () => {
+  cancelEditType ()  {
     this.editedType.editing = false;
     this.editedType.index = -1;
     this.editedType.stale = '';

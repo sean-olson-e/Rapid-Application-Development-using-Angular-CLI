@@ -18,7 +18,7 @@ export class MapPanelComponent implements OnInit {
   // this is needed to be able to create the MapView at the DOM element in this component
   @ViewChild('mapViewNode') private mapViewEl: ElementRef;
 
-  plotRestaurants = () => {
+  plotRestaurants ()  {
     return loadModules([
       'esri/geometry/Point',
       'esri/symbols/SimpleMarkerSymbol',
@@ -60,7 +60,7 @@ export class MapPanelComponent implements OnInit {
       });
   }
 
-  zoomToRestaurant = (id) => {
+  zoomToRestaurant(id) {
     const graphic_index = this.mapView.graphics.items.findIndex((g) => {
       return g.attributes.id === id;
     });

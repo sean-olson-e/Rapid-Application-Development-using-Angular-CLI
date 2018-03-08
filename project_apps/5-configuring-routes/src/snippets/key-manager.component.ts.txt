@@ -14,15 +14,15 @@ export class KeyManagerComponent implements OnInit {
   yService: YelpService;
   keyUpdate;
 
-  updateKey = (ev) => {
+  updateKey(ev) {
     this.keyUpdate = ev.target.value;
   }
-  setApiKey = (ev) => {
+  setApiKey(ev) {
     this.yService.saveApiKey(this.keyUpdate);
     this.updatedKey.emit();
   }
 
-  resetKey = () => {
+  resetKey ()  {
     this.yService.saveApiKey('');
     this.updatedKey.emit();
   }

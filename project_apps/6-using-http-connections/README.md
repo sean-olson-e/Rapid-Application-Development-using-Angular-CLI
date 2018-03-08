@@ -11,6 +11,11 @@ Citing from the [Angular documentation](https://angular.io/guide/http), 2/19/201
 * [Code Snippets](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/6-using-http-connections/src/snippets)
 * [Completed Code](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/7-incorporating-ArcGIS-API/src/app)
 
+### Finished View:
+![step six](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/blob/master/docs/img/step6_complete.png)
+
+## Instructions:
+
 #### **NOTE:** Because Yelp does not allow access for cross-origin resource sharing (CORS), we are unable to query the api directly from the browser.  To provide support for this demonstration app, a yelp-proxy service is provided.  You will find it in the root of this repository.  Lauching the service is easy:
 1. Open a console inside the yelp-proxy folder
 2. Install the node modules: **```npm install```**
@@ -61,7 +66,7 @@ import { Subject } from 'rxjs/Subject';
 **4.** Create a public search method
 
 ```
-  searchYelp = (params) => {
+  searchYelp(params) {
     const url =  'http://localhost:3000/yelp?apikey=' + this.getApiKey() + '&categories=' + params.type + '&location=' + params.location;
 
     return new Promise((resolve, reject) => {

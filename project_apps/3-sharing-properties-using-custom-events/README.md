@@ -58,10 +58,10 @@ that allows the key-manager component to signal the dashboard that the key has c
   })
   export class DashboardComponent implements OnInit {
     apiKey;
-    getApiKey = () => {
+    getApiKey ()  {
       this.apiKey = window.localStorage.getItem('apiKey');
     }
-    updateKey = () => {
+    updateKey ()  {
       this.getApiKey();
     }
     constructor() { }
@@ -111,14 +111,14 @@ that allows the key-manager component to signal the dashboard that the key has c
     @Input() apiKey;
     @Output() keySaved = new EventEmitter();
     changedKey;
-    changeKey = (ev) => {
+    changeKey(ev) {
       this.changedKey = ev.target.value;
     }
-    setApiKey = (ev) => {
+    setApiKey(ev) {
       window.localStorage.setItem('apiKey', this.changedKey);
       this.keySaved.emit();
     }
-    deleteApiKey = () => {
+    deleteApiKey ()  {
       window.localStorage.removeItem('apiKey');
       this.keySaved.emit();
     }

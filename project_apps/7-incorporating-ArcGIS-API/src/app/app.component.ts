@@ -11,7 +11,7 @@ export class AppComponent {
   apiKey;
   yService: YelpService;
 
-  getKey = () => {
+  getKey ()  {
     this.apiKey = this.yService.getApiKey();
   }
 

@@ -12,7 +12,7 @@ export class MapPanelComponent implements OnInit {
   yelpSubscription;
   temp;
 
-  zoomToRestaurant = (restaurant) => {
+  zoomToRestaurant(restaurant) {
     this.temp = 'zooming to ' + restaurant;
   }
 

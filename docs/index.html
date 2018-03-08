@@ -76,28 +76,17 @@
 
 				</textarea>
 			</section>
-			<section data-markdown data-background="img/bg-2.png">
-				<textarea data-template>
-					## What do we want to accomplish here?
-
-					#### Demonstrate development techniques and design patterns for app development using Angular CLI?
-
-					Yes, but that's not the key takeaway....
-
-				</textarea>
-			</section>
 			<section data-background="img/bg-2.png">
-					<h2> So, what is the key takeaway?</h2>
 
-                    <p><em>Familiarize yourself with the self-teaching resource</em> in this repository.  It will provide step-by-step
-					instructions, code samples and other resources to build a cool little app.</p>
+					<h2>What do we want to accomplish here?</h2>
 
-					<p style="margin: 60px 0;">github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI</p>
-
-                <p><a href="https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI" target="_gitTab">http://bit.ly/2FB7oP8</a></p>
+				<ol>
+					<li> Demonstrate essential techniques and design patterns for app development using Angular CLI</li>
+					<li> Introduce you to this self-teaching resource: <a href="https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI" target="_gitTab">http://bit.ly/2FB7oP8</a>.  It provides code samples, step-by-step
+						instructions, and other resources to build this cool little app: <a href="http://localhost:4208" target="_appTab">4208</a>.</li>
+				</ol>
 
 			</section>
-
 			<section data-markdown data-background="img/bg-6.png">
 				<textarea data-template>
 
@@ -124,6 +113,16 @@
 					- [TypeScript Playground](https://www.typescriptlang.org/play/)
 				</textarea>
 			</section>
+            <section  data-background="img/bg-5.png" data-state="blockquote-smaller">
+
+					<h2> Working with the ArcGIS API for JavaScript</h2>
+
+				<img src="img/esri-logo.png" height="286" width="640"/>
+				<h3>The <a href="https://github.com/Esri/esri-loader" target="_gitTab">esri-loader</a>, briefly</h3>
+
+						<p>A tiny library to help load ArcGIS API for JavaScript modules in non-Dojo applications</p>
+                        <p class="">https://github.com/Esri/esri-loader</p>
+            </section>
 			<section data-markdown data-background="img/bg-3.png">
 				<textarea data-template>
 					### About the Angular CLI, briefly
@@ -136,15 +135,6 @@
 
 				</textarea>
 			</section>
-            <section  data-background="img/bg-5.png" data-state="blockquote-smaller">
-
-					<h3> Working with the ArcGIS API for JavaScript</h3>
-
-                    <h4>The <a href="https://github.com/Esri/esri-loader" target="_gitTab">esri-loader</a></h4>
-
-						<p>A tiny library to help load ArcGIS API for JavaScript modules in non-Dojo applications</p>
-                        <p class="">https://github.com/Esri/esri-loader</p>
-            </section>
 			<section data-background="img/bg-3.png">
 
 					<h2> Installing the Angular CLI</h2>
@@ -182,7 +172,7 @@
 					<h2>Serving an Angular app</h2>
 
                 <p class="lang-bash hljs" style="width: 80%; margin: 0 auto; text-align: left; padding: 40px;">
-						# navigate the root directory of your app, and run<br><br>
+						# navigate to the root directory of your app, and run<br><br>
 						$ ng serve[options]<br><br><br>
                         # Open a browser and navigate to localhost:4200
 					</p>
@@ -201,7 +191,7 @@
             </section>
 			<section data-background="img/bg-9.png" data-state="into-css">
 
-                <p>So, let's get started with our app <a href="http://localhost:4208" target="_appTab">4208</a></p>
+                <p>So, let's get started with our app.</p>
 
 					<h2>Step one: create a component</h2>
 
@@ -228,7 +218,7 @@
 			</section>
 			<section data-background="img/bg-8.png">
 				<h2>Two-way property binding:</h2>
-				<p>Let's walk <a href="https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/2-importing-styles-using-built-in-directives/src/app" target="_gitTab">some code</a> that demonstrates the two-way property-binding pattern.</p>
+				<p>Let's walk <a href="https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/2-importing-styles-using-built-in-directives/src/app" target="_gitTab">the code</a> that demonstrates the two-way property-binding pattern.</p>
 			</section>
 
 
@@ -236,7 +226,7 @@
 
 					<h2>Building with a little style</h2>
 
-					<p>Here is our task list for step two:</p>
+				<p style="margin: 40px 0; text-align: left;">Here is our task list for step two:</p>
 					<ul>
 						<li>Create a header component</li>
 						<li>Create a component that will maintain a list of our favorite foods</li>
@@ -291,11 +281,10 @@
 			</section>
 			<section data-background="img/bg-9.png">
 				<h2>Use routing to manage multiple views</h2>
-				<p>
+				<p style="margin: 40px 0; text-align: left;">
 					We need to create console that will support both search and map visualizations, but first will add routing,
 					another service and a few more components.  Here is what we're trying to accomplish <a href="http://localhost:4206" target="_appTab">4206</a>.
 				</p>
-
 			</section>
 			<section data-markdown data-background="img/bg-6.png" data-state="blockquote-smaller">
 				<textarea data-template>
@@ -308,31 +297,45 @@
 					$ ng &nbsp; g &nbsp; c &nbsp; console <br><br>
 					$ ng &nbsp; g &nbsp; c &nbsp; search-panel <br><br>
 					$ ng &nbsp; g &nbsp; c &nbsp; map-panel <br><br>
-					$ ng &nbsp; generate &nbsp; service &nbsp; yelp &nbsp; --flat true <br><br>
+					$ ng &nbsp; g &nbsp; s &nbsp; yelp &nbsp; --flat true <br><br>
 				</p>
-				<p>Let's see <a href="https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/6-using-http-connections/src/app" target="_gitTab">what we have</a>.</p>
+				<p>Let's see <a href="https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/6-using-http-connections/src/app" target="_gitTab">the code</a>.</p>
 			</section>
-			<section data-markdown data-background="img/bg-9.png" data-state="into-css">
-				<textarea data-template>
-
-					We have a functional shell.  Now it's time to bring in some data.
-					## Step six: using http to consume API services
-				</textarea>
+			<section data-background="img/bg-9.png">
+				<h2>Time to add search functionality</h2>
+				<p style="margin: 40px 0; text-align: left;">We need components for our search and to build out the Yelp service to manage our API requests.</p>
+				<p>This is the functionality we want to create: <a href="http://localhost:4207" target="_appTab">4207</a>.</p>
 			</section>
-			<section data-markdown data-background="img/bg-5.png" data-state="blockquote-smaller">
-				<textarea data-template>
-					![step six complete](img/step6_complete.png)
-				</textarea>
+			<section data-background="img/bg-9.png">
+				<h2>Using the Yelp Proxy</h2>
+				<p style="margin: 40px 0; text-align: left;">At the time this app was developed the Yelp Fusion API did not support CORS, preventing calls from client-side
+					apps. To enable API access, a simple Yelp proxy is included in this repository.
+				</p>
+				<ol>
+					<li>Navigate into the <em>yelp_proxy</em> directory at the root of this repository.</li>
+					<li>From a terminal, run <span style="font-family: monospace">npm install</span></li>
+					<li>From a terminal, run <span style="font-family: monospace">npm start</span></li>
+					<li>Test by opening a browser to <a href="http://localhost:3000" target="_appTab">localhost:3000</a></li>
+				</ol>
 			</section>
 			<section data-markdown data-background="img/bg-6.png" data-state="blockquote-smaller">
 				<textarea data-template>
 					![step six](img/step_six_components.png)
 				</textarea>
 			</section>
-			<section data-markdown data-background="img/bg-8.png" data-state="blockquote-smaller">
-				<textarea>
-					## Check out the [step 6 guide](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/6-using-http-connections)
-				</textarea>
+			<section data-background="img/bg-5.png">
+				<h2>Working from the terminal:</h2>
+				<p class="lang-bash hljs" style="width: 80%; margin: 0 auto; text-align: left; padding: 40px;">
+					$ ng &nbsp; g &nbsp; c &nbsp; search-control <br><br>
+					$ ng &nbsp; g &nbsp; c &nbsp; search-results <br><br>
+				</p>
+			</section>
+			<section data-background="img/bg-7.png">
+				<h2>Leveraging RxJS Observables</h2>
+				<p style="margin: 40px 0; text-align: left;">
+					Establishing communication between services and components is trivial matter with RxJS Observables
+				</p>
+				Let's see how we manage <a href="https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/7-incorporating-ArcGIS-API/src/app" target="_gitTab"> code </a>state.
 			</section>
 			<section data-markdown data-background="img/bg-9.png" data-state="into-css">
 				<textarea data-template>

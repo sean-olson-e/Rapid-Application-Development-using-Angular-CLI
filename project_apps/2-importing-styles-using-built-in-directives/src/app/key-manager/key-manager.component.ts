@@ -10,7 +10,7 @@ export class KeyManagerComponent implements OnInit {
   label = 'Yelp Api Key';
   apiKey;
 
-  setApiKey = (ev) => {
+  setApiKey(ev) {
     window.localStorage.setItem('apiKey', this.apiKey);
   }
 

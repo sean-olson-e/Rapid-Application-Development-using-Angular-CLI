@@ -13,11 +13,11 @@ export class SearchControlComponent implements OnInit {
   selectedType;
   cuisineTypes: string[] = [];
 
-  setSelectedType = (ev) => {
+  setSelectedType(ev) {
     this.selectedType = ev.target.value;
   }
 
-  search = () => {
+  search ()  {
 
     if ( this.zip.match(/\d{5}/) === null ){
       alert('please enter a five-digit zip');

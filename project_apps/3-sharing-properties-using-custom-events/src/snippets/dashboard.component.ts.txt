@@ -9,11 +9,11 @@ export class DashboardComponent implements OnInit {
 
   apiKey;
 
-  getApiKey = () => {
+  getApiKey ()  {
     this.apiKey = window.localStorage.getItem('apiKey');
   }
 
-  updateKey = () => {
+  updateKey ()  {
     this.getApiKey();
   }
 

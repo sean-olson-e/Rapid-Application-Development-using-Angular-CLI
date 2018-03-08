@@ -10,7 +10,7 @@ export class SearchResultsComponent implements OnInit {
 
   @Input() restaurants;
 
-  selectRestaurant = (id) => {
+  selectRestaurant(id) {
     this.yService.loadRestaurant(id);
   }
 
@@ -20,3 +20,4 @@ export class SearchResultsComponent implements OnInit {
   }
 
 }
+

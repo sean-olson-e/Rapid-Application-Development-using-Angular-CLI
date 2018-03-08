@@ -12,15 +12,15 @@ export class KeyManagerComponent implements OnInit {
   @Output() keySaved = new EventEmitter();
   changedKey;
 
-  changeKey = (ev) => {
+  changeKey(ev) {
     this.changedKey = ev.target.value;
   }
-  setApiKey = (ev) => {
+  setApiKey(ev) {
     window.localStorage.setItem('apiKey', this.changedKey);
     this.keySaved.emit();
   }
 
-  deleteApiKey = () => {
+  deleteApiKey ()  {
     window.localStorage.removeItem('apiKey');
     this.keySaved.emit();
   }

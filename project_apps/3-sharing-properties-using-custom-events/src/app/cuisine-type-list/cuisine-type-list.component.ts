@@ -18,30 +18,30 @@ export class CuisineTypeListComponent implements OnInit {
     fresh: ''
   };
 
-  sortTypes = () => {
+  sortTypes() {
     this.cuisineTypes.sort((a: string, b: string) => {
       return a < b ? -1 : 1;
     });
   }
 
-  isNewType = () => {
+  isNewType() {
     const new_type = this.newType.type.toLocaleLowerCase();
     for (let i = 0; i < this.cuisineTypes.length; i++) {
-      if (this.cuisineTypes[i].toLowerCase() === new_type){
+      if (this.cuisineTypes[i].toLowerCase() === new_type) {
         return false;
       }
     }
     return true;
   }
 
-  addNewType = () => {
+  addNewType() {
     if (this.editedType.editing) {
       this.cancelEditType();
     }
     this.newType.adding = true;
   }
 
-  saveNewType = () => {
+  saveNewType() {
     if (this.newType.type !== '' && this.isNewType()) {
       this.cuisineTypes.push(this.newType.type);
       this.sortTypes();
@@ -49,12 +49,12 @@ export class CuisineTypeListComponent implements OnInit {
     this.cancelNewType();
   }
 
-  cancelNewType = () => {
+  cancelNewType() {
     this.newType.adding = false;
     this.newType.type = '';
   }
 
-  editType = (ix) => {
+  editType(ix) {
     if (this.newType.adding) {
       this.cancelNewType();
     }
@@ -63,20 +63,20 @@ export class CuisineTypeListComponent implements OnInit {
     this.editedType.stale = this.cuisineTypes[ix];
     this.editedType.fresh = this.editedType.stale;
   }
-  deleteType = (ix) => {
+  deleteType (ix) {
     if (this.editedType.editing) {
       this.cancelEditType();
     }
     this.cuisineTypes.splice(ix, 1);
   }
-  saveEditType = () => {
+  saveEditType ()  {
     if (this.editedType.fresh !== '' && this.editedType.fresh !== this.editedType.stale) {
       this.cuisineTypes[this.editedType.index] = this.editedType.fresh;
       this.sortTypes();
     }
     this.cancelEditType();
   }
-  cancelEditType = () => {
+  cancelEditType ()  {
     this.editedType.editing = false;
     this.editedType.index = -1;
     this.editedType.stale = '';

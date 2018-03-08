@@ -35,11 +35,11 @@ export class KeyManagerComponent implements OnInit {
     The use of separate property and event binding require an event handler to assign
     the updated values to the property. This can be eliminated with two-way binding.
   */
-  updateValue = (ev) => {
+  updateValue(ev) {
     this.apiKey = ev.target.value;
   }
 
-  setApiKey = (ev) => {
+  setApiKey(ev) {
     window.localStorage.setItem('apiKey', this.apiKey);
   }
 
@@ -49,26 +49,4 @@ export class KeyManagerComponent implements OnInit {
     this.apiKey = window.localStorage.getItem('apiKey');
   }
 }
-
---------------------------------------------------------------------------
-
-
-import { FormsModule } from '@angular/forms';
-
-import { AppComponent } from './app.component';
-import { KeyManagerComponent } from './key-manager/key-manager.component';
-
-@NgModule({
-  declarations: [
-    AppComponent,
-    KeyManagerComponent,
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
 
