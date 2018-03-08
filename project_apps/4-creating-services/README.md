@@ -1,6 +1,6 @@
 # Creating & Using Services
-One key to a successful Angular application is the intelligent use of services. At first, the name ***servies*** might sound
-complex, but they're really not.  A service is merely JavaScript class that can be used by one or components.  What goes in a 
+One key to a successful Angular application is the intelligent use of services. At first, the name ***services*** might sound
+vague or a bit abstract, but they're really not.  A service is merely JavaScript class that can be used by one or components.  What goes in a 
 class is completely up to you, determined by the needs of your application.  
 
 ## Step Four: Create a service to manage the cuisine-type options
