@@ -14,7 +14,7 @@ The get started on our app, we need a way to save the Yelp API key we'll need to
 purposes of this app we'll use the browser's localStorage API.  So begin by creating a component name 'key-manager'.
 
 ### Finished View
-![step one](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/blob/master/docs/img/step1_complete.png)
+![step one](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/blob/master/docs/img/complete1.png)
 
 ### Step One Resources:
 * [Code Snippets](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/1-creating-components/src/snippets/key-manager)
