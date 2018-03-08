@@ -123,17 +123,17 @@
 						<p>A tiny library to help load ArcGIS API for JavaScript modules in non-Dojo applications</p>
                         <p class="">https://github.com/Esri/esri-loader</p>
             </section>
-			<section data-markdown data-background="img/bg-3.png">
-				<textarea data-template>
-					### About the Angular CLI, briefly
+			<section data-background="img/bg-3.png">
 
-					*  It makes it easy to create an application that already works, right out of the box.
-					*  It generates components, routes, services and pipes with a simple command.
-					*  It eliminates the time consuming task of creating a custom build script.
-					*  It provides a standard application architecture that supports team development.
-					*  It facilitates rapid development with generator commands for components, services, directives and more.
+					<h2>About the Angular CLI, briefly</h2>
+					<ul style="width: 75%; margin: 40px auto;">
+						<li>It makes it easy to create an application that already works, right out of the box.</li>
+					<li>It generates components, routes, services and pipes with a simple command.</li>
+					<li>It eliminates the time consuming task of creating a custom build script.</li>
+					<li>It provides a standard application architecture that supports team development.</li>
+					<li>It facilitates rapid development with generator commands for components, services, directives and more.</li>
+					</ul>
 
-				</textarea>
 			</section>
 			<section data-background="img/bg-3.png">
 
@@ -226,7 +226,7 @@
 
 					<h2>Building with a little style</h2>
 
-				<p style="margin: 40px 0; text-align: left;">Here is our task list for step two:</p>
+				<p style="margin: 40px 0;">Here is our task list for step two:</p>
 					<ul>
 						<li>Create a header component</li>
 						<li>Create a component that will maintain a list of our favorite foods</li>
@@ -281,7 +281,7 @@
 			</section>
 			<section data-background="img/bg-9.png">
 				<h2>Use routing to manage multiple views</h2>
-				<p style="margin: 40px 0; text-align: left;">
+				<p style="margin: 40px auto; text-align: left; width: 70%;">
 					We need to create console that will support both search and map visualizations, but first will add routing,
 					another service and a few more components.  Here is what we're trying to accomplish <a href="http://localhost:4206" target="_appTab">4206</a>.
 				</p>
@@ -303,12 +303,12 @@
 			</section>
 			<section data-background="img/bg-9.png">
 				<h2>Time to add search functionality</h2>
-				<p style="margin: 40px 0; text-align: left;">We need components for our search and to build out the Yelp service to manage our API requests.</p>
+				<p style="margin: 40px auto; text-align: left; width: 70%;">We need components for our search and to build out the Yelp service to manage our API requests.</p>
 				<p>This is the functionality we want to create: <a href="http://localhost:4207" target="_appTab">4207</a>.</p>
 			</section>
 			<section data-background="img/bg-9.png">
 				<h2>Using the Yelp Proxy</h2>
-				<p style="margin: 40px 0; text-align: left;">At the time this app was developed the Yelp Fusion API did not support CORS, preventing calls from client-side
+				<p style="margin: 40px auto; text-align: left; width: 70%;">At the time this app was developed the Yelp Fusion API did not support CORS, preventing calls from client-side
 					apps. To enable API access, a simple Yelp proxy is included in this repository.
 				</p>
 				<ol>
@@ -332,32 +332,45 @@
 			</section>
 			<section data-background="img/bg-7.png">
 				<h2>Leveraging RxJS Observables</h2>
-				<p style="margin: 40px 0; text-align: left;">
+				<p style="margin: 40px auto; text-align: left; width: 70%;">
 					Establishing communication between services and components is trivial matter with RxJS Observables
 				</p>
 				Let's see how we manage <a href="https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/7-incorporating-ArcGIS-API/src/app" target="_gitTab"> code </a>state.
 			</section>
-			<section data-markdown data-background="img/bg-9.png" data-state="into-css">
-				<textarea data-template>
+			<section data-background="img/bg-9.png">
+					<h2>Bring in the Map</h2>
+					<p style="margin: 40px auto; text-align: left; width: 70%;">Alright, we have a functioning app.  Now let's add a useful visualization, so we can figure out
+						how to get to the restaurant.  To bring the ArcGIS API for JavaScript into Angular, we need the <a href="https://github.com/Esri/esri-loader" target="_gitTab">esri-loader</a>.
+					</p>
+			</section>
+			<section data-background="img/bg-5.png">
+				<h2>Working from the terminal:</h2>
+				<p class="lang-bash hljs" style="width: 80%; margin: 0 auto; text-align: left; padding: 40px;">
+					$ npm &nbsp; install &nbsp; --save esri-loader <br><br>
+					$ npm &nbsp; install &nbsp; --save &nbsp; @types/arcgis-js-api <br><br>
+					# after &nbsp; installation<br>
+					# add &nbsp; "types": &nbsp; ["arcgis-js-api"] &nbsp; to &nbsp; tsconfig.app.json<br>
+					# add &nbsp; "types": &nbsp; ["arcgis-js-api"] &nbsp; to &nbsp; tsconfig.spec.json
+				</p>
+			</section>
+			<section data-background="img/bg-6.png">
+				<h2>Import the esri-loader into a component</h2>.
+				<p class="lang-bash hljs" style="width: 80%; margin: 0 auto; text-align: left; padding: 40px;">
+					import { loadModules } from 'esri-loader'; <br>
+					&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+					loadModules([<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;'esri/Map', 'esri/views/MapView', 'esri/Graphic'<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;])<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;.then(([EsriMap, EsriMapView, Graphic]) => {<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;// Work with your map<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+				</p>
+			</section>
+			<section  data-background="img/bg-8.png">
 
-					Good, we have data.  Now let's add a map to plot the restaurant locations
-					## Step seven: include a map with the ArcGIS API for JsavaScript
-				</textarea>
-			</section>
-			<section data-markdown data-background="img/bg-5.png" data-state="blockquote-smaller">
-				<textarea data-template>
-					![step seven complete](img/step7_complete.png)
-				</textarea>
-			</section>
-			<section data-markdown data-background="img/bg-6.png" data-state="blockquote-smaller">
-				<textarea data-template>
-					![step seven](img/step_seven_components.png)
-				</textarea>
-			</section>
-			<section data-markdown data-background="img/bg-8.png" data-state="blockquote-smaller">
-				<textarea>
-					## Check out the [step 7 guide](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/7-incorporating-ArcGIS-API)
-				</textarea>
+				<h2>Let's look at <a href="https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/8-finished-app/src/app" target="_gitTab">a sample</a> implementation</h2>
+
 			</section>
 			<section data-markdown data-background="img/bg-9.png" data-state="into-css">
 				<textarea data-template>
