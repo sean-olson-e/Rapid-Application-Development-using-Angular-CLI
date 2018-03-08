@@ -16,7 +16,7 @@ a hands-on experience with the essential technologies and development patterns o
 * **[/resources](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/resources)**: miscellaneous resource documents
 * **[/yelp_proxy](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/yelp_proxy)**: a simple node proxy used to communicate with the Yelp API
 
-## >>[Launch Presentation SLides](https://sean-olson-e.github.io/Rapid-Application-Development-using-Angular-CLI/#/)
+## >>[Launch Presentation Slides](https://sean-olson-e.github.io/Rapid-Application-Development-using-Angular-CLI/#/)
 
 ## Getting started
 

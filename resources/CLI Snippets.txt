@@ -1,12 +1,113 @@
 CLI snippets
 
-
-ng new my-app --skip-install true --directory my-directory
+ng new my-app --directory my-app-directory --dry-run
 
 ng serve 
 
-ng serve --port 8080
+ng generate component key-manager
 
-ng generate component key-manager --spec false
+********************** One-Way Binding Snippets ****************************
+--------------------------------------------------------------------------
 
+<div>
+  <!-- using double-braces to bind properties using string interpolation -->
+  <label for="api-key">{{label}}: </label>
+  <!-- input uses one-way property binding and event binding seperately  -->
+  <input type="text" name="api-key" id="api-key" [value]="apiKey" (input)="updateValue($event)">
+  <button (click)='setApiKey($event)'>Save Key</button>
+</div>
+
+--------------------------------------------------------------------------
+
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-key-manager',
+  templateUrl: './key-manager.component.html',
+  styleUrls: ['./key-manager.component.css']
+})
+export class KeyManagerComponent implements OnInit {
+
+  label = 'Yelp Api Key';
+  apiKey;
+
+  /*
+    The use of separate property and event binding require an event handler to assign
+    the updated values to the property. This can be eliminated with two-way binding.
+  */
+  updateValue = (ev) => {
+    this.apiKey = ev.target.value;
+  }
+
+  setApiKey = (ev) => {
+    window.localStorage.setItem('apiKey', this.apiKey);
+  }
+
+  constructor() { }
+
+  ngOnInit() {
+    this.apiKey = window.localStorage.getItem('apiKey');
+  }
+}
+
+--------------------------------------------------------------------------
+
+********************** Two-Way Binding Snippets ****************************
+
+--------------------------------------------------------------------------
+
+<div>
+  <!-- using double-braces to bind properties using string interpolation -->
+  <label for="api-key">{{label}}: </label>
+  <input type="password" name="api-key" id="api-key" [(ngModel)]="apiKey">
+  <button (click)='setApiKey($event)'>Save Key</button>
+</div>
+
+--------------------------------------------------------------------------
+
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-key-manager',
+  templateUrl: './key-manager.component.html',
+  styleUrls: ['./key-manager.component.css']
+})
+export class KeyManagerComponent implements OnInit {
+
+  label = 'Yelp Api Key';
+  apiKey;
+
+  setApiKey = (ev) => {
+    window.localStorage.setItem('apiKey', this.apiKey);
+  }
+
+  constructor() { }
+
+  ngOnInit() {
+    this.apiKey = window.localStorage.getItem('apiKey');
+  }
+}
+
+--------------------------------------------------------------------------
+
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
+import { AppComponent } from './app.component';
+import { KeyManagerComponent } from './key-manager/key-manager.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    KeyManagerComponent,
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
 
