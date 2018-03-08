@@ -4,7 +4,7 @@ complex, but they're really not.  A service is merely JavaScript class that can 
 class is completely up to you, determined by the needs of your application.  
 
 ## Step Four: Create a service to manage the cuisine-type options
-Currently, the cuisine-type-list is lost everytime the browser is refreshed, so we need to save the data, somewhere.  We don't have a datbase connected 
+Currently, the cuisine-type-list is lost every time the browser is refreshed, so we need to save the data, somewhere.  We don't have a datbase connected 
 to our app, so we'll mock one up using the localStorage API of the browser, just as we did for the key-manager.  To support the use of this data across 
 components, we'll encapsulate it within a class. 
 
@@ -12,7 +12,10 @@ components, we'll encapsulate it within a class.
 * [Code Snippets](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/4-creating-services/src/snippets)
 * [Completed Code](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/5-configuring-routes/src/app)
 
+### Finished View:
+![step four](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/blob/master/docs/img/step4_complete.png)
 
+## Instructions:
 
 ### a: Using the Angular CLI generate a new service class.
 ```

@@ -7,6 +7,10 @@ The Angular Router enables navigation from one view to the next as users perform
 * [Code Snippets](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/5-configuring-routes/src/snippets)
 * [Completed Code](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/6-using-http-connections/src/app)
 
+### Finished View:
+![step five](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/blob/master/docs/img/step5_complete.png)
+
+## Instructions:
 
 ### a: Create a service to manage the yelp key and api calls
 1. Generate a Yelp service -- run **``` ng g s yelp --flat true --spec false ```** from the Angular CLI.
