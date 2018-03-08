@@ -10,14 +10,6 @@ export class KeyManagerComponent implements OnInit {
   label = 'Yelp Api Key';
   apiKey;
 
-  /*
-    The use of separate property and event binding require an event handler to assign
-    the updated values to the property. This can be eliminated with two-way binding.
-  */
-  updateValue = (ev) => {
-    this.apiKey = ev.target.value;
-  }
-
   setApiKey = (ev) => {
     window.localStorage.setItem('apiKey', this.apiKey);
   }
@@ -27,5 +19,5 @@ export class KeyManagerComponent implements OnInit {
   ngOnInit() {
     this.apiKey = window.localStorage.getItem('apiKey');
   }
-
 }
+

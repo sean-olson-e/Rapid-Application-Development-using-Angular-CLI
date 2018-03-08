@@ -52,46 +52,7 @@ export class KeyManagerComponent implements OnInit {
 
 --------------------------------------------------------------------------
 
-********************** Two-Way Binding Snippets ****************************
 
---------------------------------------------------------------------------
-
-<div>
-  <!-- using double-braces to bind properties using string interpolation -->
-  <label for="api-key">{{label}}: </label>
-  <input type="password" name="api-key" id="api-key" [(ngModel)]="apiKey">
-  <button (click)='setApiKey($event)'>Save Key</button>
-</div>
-
---------------------------------------------------------------------------
-
-import { Component, OnInit } from '@angular/core';
-
-@Component({
-  selector: 'app-key-manager',
-  templateUrl: './key-manager.component.html',
-  styleUrls: ['./key-manager.component.css']
-})
-export class KeyManagerComponent implements OnInit {
-
-  label = 'Yelp Api Key';
-  apiKey;
-
-  setApiKey = (ev) => {
-    window.localStorage.setItem('apiKey', this.apiKey);
-  }
-
-  constructor() { }
-
-  ngOnInit() {
-    this.apiKey = window.localStorage.getItem('apiKey');
-  }
-}
-
---------------------------------------------------------------------------
-
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';

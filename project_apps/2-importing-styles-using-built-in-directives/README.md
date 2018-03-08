@@ -7,12 +7,16 @@ There are many built-in directives in Angular, designed to assist with common ta
 * [ngStyle](https://angular.io/api/common/NgStyle) --The styles are updated according to the value of the expression evaluation.
 * [ngClass](https://angular.io/api/common/NgClass) -- The CSS classes are updated as follows, depending on the type of the expression evaluation.
 
-## Step Two: Import Bootstrap and Font-Awesome; Create another Component
+## Step Two: Create Components and Import Global Styles; 
+
+### Finished View:
+![step two](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/blob/master/docs/img/step2_complete.png)
 
 ### Step Two Resources:
 * [Code Snippets](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/2-importing-styles-using-built-in-directives/src/snippets)
 * [Completed Code](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/3-sharing-properties-using-custom-events/src/app)
 
+## Instructions:
 
 ### a: Import Bootstrap and Font Awesome Styles
 * use npm to install Bootstrap: 

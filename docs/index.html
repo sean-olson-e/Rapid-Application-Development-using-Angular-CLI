@@ -201,7 +201,7 @@
             </section>
 			<section data-background="img/bg-9.png" data-state="into-css">
 
-                <p>So, let's get started with our <a href="http://localhost:4208" target="_appTab">app!</a></p>
+                <p>So, let's get started with our app <a href="http://localhost:4208" target="_appTab">4208</a></p>
 
 					<h2>Step one: create a component</h2>
 
@@ -213,156 +213,60 @@
 					![step one](img/step_one_component.png)
 				</textarea>
 			</section>
-			<section data-markdown data-background="img/bg-6.png">
-				<textarea data-template>
-					## Components
+			<section data-background="img/bg-6.png">
+					<h2>Create a component using Angular CLI</h2>
 
-					* Clone the repository to your machine
-					* Open a terminal window and navigate to ```project_apps/1-creating-components```
-					* Run
-
-					```
-						ng generate component key-manager --spec false
-
-					```
-				</textarea>
-			</section>
-			<section data-markdown data-background="img/bg-5.png">
-				<textarea data-template>
-					## What gets generated?
-					A simple HTML template, really simple
-
-					```
-					<p>
-					  key-manager works!
+					<p class="lang-bash hljs" style="width: 80%; margin: 0 auto; text-align: left; padding: 40px;">
+						# Syntax: ng &nbsp; generate &nbsp; &lt;item&gt; &nbsp; &lt;name&gt; &nbsp; [options]<br><br>
+						$ ng &nbsp; generate &nbsp; component &nbsp; key-manager<br><br><br>
+						# Abbreviated syntax:&nbsp; ng &nbsp; g &nbsp; c &nbsp;  &lt;name&gt; [options]<br><br>
+						$ ng &nbsp; g &nbsp; c &nbsp; key-manager<br><br><br>
 					</p>
 
-					```
-				</textarea>
+				<p>Let's actually <a href="http://localhost:4201" target="_appTab">see it work</a></p>
+
 			</section>
-			<section data-markdown data-background="img/bg-6.png">
-				<textarea data-template>
-					## What else gets generated?
-					The component class module.
-
-					```
-						import { Component, OnInit } from '@angular/core';
-
-						@Component({
-						  selector: 'app-key-manager',
-						  templateUrl: './key-manager.component.html',
-						  styleUrls: ['./key-manager.component.css']
-						})
-						export class KeyManagerComponent implements OnInit {
-
-						  constructor() { }
-
-						  ngOnInit() {
-						  }
-
-						}
-
-					```
-				</textarea>
+			<section data-background="img/bg-8.png">
+				<h2>Two-way property binding:</h2>
+				<p>Let's walk <a href="https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/2-importing-styles-using-built-in-directives/src/app" target="_gitTab">some code</a> that demonstrates the two-way property-binding pattern.</p>
 			</section>
-			<section data-markdown data-background="img/bg-7.png">
-				<textarea data-template>
-					![app screenshot](img/component_anatomy.png)
-				</textarea>
+
+
+			<section data-background="img/bg-9.png" >
+
+					<h2>Let's keep going!</h2>
+
+					<p>Here is our task list for step two:</p>
+					<ul>
+						<li>Create a header component</li>
+						<li>Create a component that will maintain a list of our favorite foods</li>
+						<li>Leverage built-in Angular directives</li>
+						<li>Add some global styles</li>.
+					</ul>
+					<p>Here's what we're going to build <a href="http://localhost:4203" target="_appTab">4203</a></p>
+
 			</section>
 			<section data-markdown data-background="img/bg-5.png">
-				<textarea data-template>
-					## Does the generator do anything else?
-					Why yes.  The CLI generator also creates a module css file, a test module if you choose, and it registers the component with the ```app.module.ts``` file.
-
-					```
-					import { BrowserModule } from '@angular/platform-browser';
-					import { NgModule } from '@angular/core';
-					import { AppComponent } from './app.component';
-					import { KeyManagerComponent } from './key-manager/key-manager.component';
-
-					@NgModule({
-					  declarations: [
-						AppComponent,
-						KeyManagerComponent
-					  ],
-					  ...
-					})
-					export class AppModule { }
-
-					```
-
-					 It dos a lot with a single command.
-				</textarea>
-			</section>
-			<section data-markdown data-background="img/bg-6.png">
-				<textarea data-template>
-					### Rendering the Component
-
-					You can include a component in the rendered application by adding the template selector to andother HTML template.  In this case we add it to the ```app.component.html```
-
-
-					```
- 						<app-key-manager></app-key-manager>
-
-					```
-				</textarea>
-			</section>
-			<section data-markdown data-background="img/bg-6.png" data-state="blockquote-smaller">
-				<textarea data-template>
-					## One-Way Form Binding & String Interpolation
-
-					```
-						<div>
-						  <!-- using double-braces to bind properties using string interpolation -->
-						  <label for="api-key">{{label}}: </label>
-							<!-- input uses one-way property binding and event binding seperately  -->
-						  <input type="text" name="api-key" id="api-key" [value]="apiKey" (input)="updateValue($event)">
-						  <button (click)='setApiKey($event)'>Save Key</button>
-						</div>
-					```
-
-				</textarea>
-			</section>
-			<section data-markdown data-background="img/bg-5.png" data-state="blockquote-smaller">
-				<textarea data-template>
-					## Two-Way Form Binding
-
-					```
-						<div>
-						  <!-- using double-braces to bind properties using string interpolation -->
-						  <label for="api-key">{{label}}: </label>
-							<!-- input uses two-way binding, combining property and event  -->
-						  <input type="password" name="api-key" id="api-key" [(ngModel)]="apiKey">
-						  <button (click)='setApiKey($event)'>Save Key</button>
-						</div>
-					```
-
-					Two-way binding requires the FormsModule to be imported through the [app.module.ts](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/blob/master/project_apps/2-importing-styles-using-built-in-directives/src/app/app.module.ts)
-
-				</textarea>
-			</section>
-			<section data-markdown data-background="img/bg-9.png" data-state="into-css">
-				<textarea data-template>
-					Let's keep going!
-
-					## Step two: add global styles, implement built-in directives, and create more components.
-				</textarea>
-			</section>
-			<section data-markdown data-background="img/bg-6.png" data-state="blockquote-smaller">
-				<textarea data-template>
-					![step two complete](img/step2_complete.png)
-				</textarea>
-			</section>
-			<section data-markdown data-background="img/bg-5.png" data-state="blockquote-smaller">
 				<textarea data-template>
 					![step two](img/step_two_components.png)
 				</textarea>
 			</section>
-			<section data-markdown data-background="img/bg-8.png" data-state="blockquote-smaller">
-				<textarea>
-					## Check out the [step 2 guide](https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/2-importing-styles-using-built-in-directives)
-				</textarea>
+			<section data-background="img/bg-5.png">
+				<h2>Working from the terminal:</h2>
+				<p class="lang-bash hljs" style="width: 80%; margin: 0 auto; text-align: left; padding: 40px;">
+					$ ng &nbsp; generate &nbsp; component &nbsp; header <br><br>
+					$ ng &nbsp; g &nbsp; c &nbsp; cuisine-type-list <br><br>
+					$ npm &nbsp; install &nbsp; bootstrap &nbsp; --save <br><br>
+					$ npm &nbsp; install &nbsp; font-awesome &nbsp; --save <br><br>
+
+				</p>
+
+				<p>Let's walk <a href="https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/3-sharing-properties-using-custom-events/src/app" target="_gitTab">some code</a> that demonstrates the two-way property-binding pattern.</p>
+			</section>
+			<section data-background="img/bg-8.png">
+				<h2>Let's review the <a href="https://github.com/sean-olson-e/Rapid-Application-Development-using-Angular-CLI/tree/master/project_apps/3-sharing-properties-using-custom-events/src/app" target="_gitTab">finished</a> code.</h2>
+
+
 			</section>
 			<section data-markdown data-background="img/bg-9.png" data-state="into-css">
 				<textarea data-template>
